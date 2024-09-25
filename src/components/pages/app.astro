@@ -1,0 +1,74 @@
+---
+import Hero from '../Hero.astro';
+import Skills from '../Skills.astro';
+import SectionContainer from '../SectionContainer.astro';
+import Projects from '../Projects.astro';
+import About from '../About.astro';
+import Contact from '../Contact.astro';
+---
+
+<main class="w-full flex flex-col gap-[10rem]">
+	<SectionContainer>
+		<Hero>
+			</slot>
+		</Hero>
+	</SectionContainer>
+	<SectionContainer  id="habilidades">
+		<Skills/>
+	</SectionContainer>
+	<SectionContainer id="proyectos">
+		<Projects/>
+	</SectionContainer>
+	<SectionContainer id="sobre-mí">
+		<About/>
+	</SectionContainer>
+	<SectionContainer id="contacto">
+		<Contact/>
+	</SectionContainer>
+</main>
+
+
+	
+<script>
+  import { annotate } from "rough-notation";
+  function init() {
+    const notions = document.querySelectorAll('main section div h2');
+    const annotations = Array.from(notions).map((node) => {
+      const element = node as HTMLElement;
+  
+      return annotate(element, {
+        type: "underline",
+        color: "#4ade80",
+        multiline: true,
+        brackets: ["left", "right"],
+        strokeWidth: 1.5,
+        animationDuration: 1000,
+        animate: true, 
+      });
+    });
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const index = Array.from(notions).indexOf(entry.target);
+          annotations[index].show();
+          observer.unobserve(entry.target);
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "50px 0px -50px 0px",
+      threshold: 0.1,
+    })
+
+    notions.forEach((title) => {
+      observer.observe(title)
+    })
+  }
+  init()
+
+  document.addEventListener("astro:after-swap", init)
+ 
+</script>

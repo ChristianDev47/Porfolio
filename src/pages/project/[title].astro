@@ -1,0 +1,27 @@
+---
+import Projects from '@/components/pages/project.astro'
+import Layout from '@/layouts/Layout.astro'
+import { PROJECTS } from "@/constants/projects_data"
+import "@fontsource-variable/inter"
+
+
+const { title } = Astro.params;
+
+const project = PROJECTS.find(
+  (p) => p.title.toLowerCase() === title
+);
+
+if (!project) {
+  throw Astro.redirect('/404');
+}
+
+export async function getStaticPaths() {
+  return PROJECTS.map((project) => ({
+    params: { title: project.title.toLowerCase()},
+  }));
+}
+---
+
+<Layout title="doneber.dev" description=''>
+  <Projects project={project}/>
+</Layout>

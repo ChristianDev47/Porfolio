@@ -1,0 +1,36 @@
+---
+import SkillsSection  from './SkillSection.astro';
+import TitleSection from './TitleSection.astro';
+import { TechnicalSkills, SoftSkills, SoftSkills_en } from '@/constants/skills_data'
+
+import { getI18N } from "@/i18n"
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
+const SoftSkills_data = Astro.currentLocale === 'es' ? SoftSkills : SoftSkills_en;
+
+---
+
+<div class="flex flex-col gap-y-5 justify-center items-center w-full max-w-6xl px-8">
+  <TitleSection>
+    {i18n.SKILLS.SKILLS_INFO.TITLE.split(' ')[0]} <span class="text-[#20b556] dark:text-[#4ade80]">{i18n.SKILLS.SKILLS_INFO.TITLE.split(' ')[1]}</span>
+  </TitleSection>
+  <p class="dark:text-gray-400 text-[16px] text-center max-w-[45rem] text-[#292929]">{i18n.SKILLS.SKILLS_INFO.SUBTITLE}</p>
+  <div class="flex lg:justify-between justify-center items-center gap-[1rem] flex-wrap relative z-50">
+    <SkillsSection title="Frontend" skills={TechnicalSkills.Frontend} />
+    <SkillsSection title="Backend" skills={TechnicalSkills.Backend} />
+    <SkillsSection title={i18n.SKILLS.SKILLS_INFO.OTHERS} skills={TechnicalSkills.Others} />
+  </div>
+  <div class="flex flex-col justify-center items-center dark:bg-gradient-to-br from-neutral-900 to-transparent rounded-xl lg:max-w-2xl sm:max-w-[38rem] max-w-[308px]  overflow-hidden p-2 dark:shadow-[0px_0px_24px_0px_rgba(0,0,0,0.5)]">
+
+    <h3 class="font-semibold text-[25px] m-2">{i18n.SKILLS.SKILLS_INFO.SOFT_SKILLS}</h3>
+    <div class="flex justify-center gap-[3rem] flex-wrap  px-2 py-4 rounded-[1rem] w-full">
+      {SoftSkills_data.map((Skill) => (
+        <div class=" flex flex-col justify-center items-center gap-1 dark:text-gray-300 text-[#292929]">
+          <Skill.icon class="size-8" />
+          <p class="font-semibold text-[14px]">{Skill.name}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>

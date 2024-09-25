@@ -1,0 +1,44 @@
+---
+interface Props {
+  video: string
+}
+
+const { video } = Astro.props
+---
+</head>
+
+<div class="relative max-w-[800px] w-full h-full max-h-[378px] m-0 overflow-hidden z-20" style="box-shadow:0px 0px 24px 0px rgba(0,0,0,0.9)">
+  <video
+    id="local-video"
+    muted
+    autoplay
+    loop
+    controls
+  >
+    <source src={video} type="video/mp4" />
+  </video>
+</div>
+
+<style>
+  
+  video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const videoElement = document.getElementById('local-video') as HTMLVideoElement;
+
+    if (videoElement) {
+      videoElement.addEventListener('canplay', () => {
+        videoElement.play().catch(error => {
+          console.error('Error al intentar reproducir el video:', error);
+        });
+      });
+    }
+  });
+</script>

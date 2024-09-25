@@ -1,0 +1,29 @@
+---
+import EducationItem from "./EducationItem.astro"
+import ProgrammerIcon from "@/icons/Programmer.astro"
+import UniversityIcon from "@/icons/University.astro"
+import PracticesIcon from "@/icons/Practices.astro"
+import { getI18N } from "@/i18n"
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
+const ICONS = [
+  ProgrammerIcon, 
+  PracticesIcon,
+  UniversityIcon 
+]
+---
+
+<ol class="relative ">
+  <h1 class="text-[25px] font-semibold mx-12 my-8">{i18n.ABOUT.EDUCATION.TITLE.split(' ')[0]} {i18n.ABOUT.EDUCATION.TITLE.split(' ')[1]} <span class="text-[#20b556] dark:text-[#4ade80]">{i18n.ABOUT.EDUCATION.TITLE.split(' ')[2]}</span></h1>
+  {
+    i18n.ABOUT.EDUCATION.CONTENT.map((education, index) => {
+      const item = {...education, ICON: ICONS[index]}
+      return (
+      <li class="relative">
+        <EducationItem {...item} />
+      </li>
+      )
+    })
+  }
+</ol>

@@ -1,0 +1,17 @@
+<div class="group relative cursor-pointer">
+  <div
+    class="relative z-10 block rounded-xl border-4 text-white text-[15px] dark:text-black border-white/30 bg-[#2a2a2a] dark:bg-gray-100 bg-clip-padding p-2 px-5 font-bold "
+    >
+    <slot/>
+    </div
+  ><div
+    class="pointer-events-none absolute inset-0 flex items-center overflow-hidden blur-lg transition-transform duration-500 will-change-transform group-hover:scale-110"
+  >
+    <div class="aspect-square w-full scale-110">
+      <div
+        class="h-full w-full bg-gradient-to-tr from-amber-600 to-teal-600 group-hover:animate-spin-slow"
+      >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import "@fontsource-variable/inter"
+---
+
+<Layout title="doneber.dev" description=''>
+  <main class="w-full h-full flex flex-grow justify-center items-center">
+    <div class="flex h-full justify-center items-center title">
+      <img src="/404/sadface.gif" alt="sadface" width="200" height="200">
+      <p ><span class="text-[#20b556] dark:text-[#4ade80]">{'{ message: '}</span>'{"Error 404"}'<span class="text-[#20b556] dark:text-[#4ade80]">{'}'}</span></p>
+    </div>
+  </main>
+</Layout>
+
+
+<style >
+  .title {
+    font-family: 'Inter Variable', sans-serif;
+    font-weight: 900;
+  }
+</style>

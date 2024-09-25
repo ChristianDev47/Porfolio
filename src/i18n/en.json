@@ -1,0 +1,86 @@
+{
+  "SEO_TITLE": "Christian Delgado's Porfolio",
+  "SEO_DESCRIPTION": "Hire the user to create amazing projects together. Full-Stack Developer",
+  "HERO": {
+    "INFO": "Hello, I am",
+    "NAME": "Christian Delgado",
+    "DESCRIPTION": "Graduated in Systems Engineering. Passionate about creating innovative applications by combining my skills in both front-end and back-end to deliver comprehensive and effective solutions, always with a focus on learning and continuous improvement.",
+    "BTN_DOWNLOAD_CV": "Download CV",
+    "BTN_AVAILABLE_FOR_WORK": "Available for Work",
+    "SUB_1": "Enginner",
+    "SUB_2": "Programmer",
+    "SUB_3": "And...",
+    "SUB_4": "Full-Stack Developer"
+  },
+  "SKILLS": {
+    "SKILLS_INFO": {
+      "TITLE": "My Skills",
+      "SUBTITLE": "Here are my technical and social skills, highlighting my experience in developing solutions and effective collaboration in the work environment.",
+      "OTHERS": "Others",
+      "SOFT_SKILLS": "Social Skills"
+    }
+  },
+  "PROJECTS": {
+    "TITLE": "Featured Projects",
+    "SUBTITLE": "Here are some of my projects that you shouldn't miss.",
+    "INFO": "More Details",
+    "BTN_CODE": "Code",
+    "BTN_PREVIEW": "Preview"
+  },
+  "ABOUT": {
+    "TITLE": "About Me",
+    "CONTENT": {
+      "TEXT": [
+        {
+          "PARAGRAPH": "My name is Christian Delgado. I started in the world of programming when I was young, starting my journey with an old computer I had in my room. The curiosity about the systems and pages around me led me to study Systems Engineering later on, where I developed the ability to solve problems and create innovative solutions."
+        },
+        {
+          "PARAGRAPH": "During my professional internship, my technical and professional skills were reinforced, learning to work not only as a team but also under pressure, preparing me to face challenges and obstacles that come my way."
+        },
+        {
+          "PARAGRAPH": "Today, I continue with the same passion for learning and constantly evolving. My goal is to leave a mark on the world of programming, as well as in every project I participate in, bringing not only my knowledge and skills, but also my principles and values, such as responsibility and dedication to doing what I love most, which is development and programming."
+        }
+      ]
+    },
+    "EDUCATION": {
+      "TITLE": "Education and Experience",
+      "CONTENT": [
+        {
+          "DATE": "Currently...",
+          "TITLE": "Seeking Improvement and New Opportunities",
+          "SUBTITLE": "I am currently focused on continuing to improve, with a particular interest in finding job opportunities.",
+          "DESCRIPTION": "Since graduating from university, I have dedicated my time to learning and mastering new technologies. Throughout my university career, I acquired a solid foundation, and later, I complemented those skills with the learning of more advanced tools and technologies. This has allowed me to expand my experience and skills in web development and programming, driving me to continue growing day by day."
+        },
+        {
+          "DATE": "March 2023 - August 2023",
+          "LINK": "hhtps",
+          "TITLE": "Professional Internship",
+          "SUBTITLE": "I completed a professional internship at ITDS (Instituto Tecnológico Domingo Savio) in Tarija for six months.",
+          "DESCRIPTION": "During my professional internship at the Instituto Tecnológico Domingo Savio (ITDS), I played an active role in the administration of systems and databases, as well as in the management of the institution's web pages. I proposed and implemented important improvements in the information systems, optimizing their efficiency and functionality. I also successfully managed the complete migration of the database to a new system, ensuring a smooth and uninterrupted transition of all institutional records. This experience allowed me to apply and consolidate my knowledge in a professional environment, strengthening my skills to manage technology projects in a comprehensive and effective manner."
+        },
+        {
+          "DATE": "2019 - June 2024",
+          "LINK": "hhtps",
+          "TITLE": "University Studies",
+          "SUBTITLE": "I studied at Universidad Privada Domingo Savio (UPDS) in Tarija, majoring in Systems Engineering.",
+          "DESCRIPTION": "I completed my professional studies at Universidad Privada Domingo Savio (UPDS), during which I received various academic recognitions. I was awarded as the best student in my major four times in a row, and received a special recognition as the third-best student in the entire faculty. Upon graduating, I was awarded a medal for excellence for my outstanding academic performance."
+        }
+      ]
+    }
+  },
+  "CONTACT": {
+    "TITLE": "Contact",
+    "SUBTITLE": "Let's be amazing",
+    "SUBTITLE2": "Together!",
+    "PARAGRAPH": "As a developer, my passion for programming and my motivation to face new challenges drive me to grow constantly. I am currently seeking job opportunities where I can apply and expand my skills both personally and professionally. If you are looking for someone with dedication, responsibility, and passion for what they do,",
+    "CONTACT": "don't hesitate to contact me!",
+    "BTN_CONTACT": "Get in Touch!"
+  },
+  "FOOTER": {
+    "TITLE": "Almost all rights reserved"
+  },
+  "ERROR_404": {
+    "TITLE": "Page Not Found",
+    "BACK_HOMEPAGE_BTN": "Back to Homepage"
+  }
+}

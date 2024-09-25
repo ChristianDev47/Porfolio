@@ -1,0 +1,28 @@
+---
+import type { JSX } from 'astro/jsx-runtime';
+interface Props {
+  title: string;
+  skills: JSX.Element[];
+}
+
+const { title, skills } = Astro.props;
+---
+
+<div
+  class="relative rounded-lg p-6 text-center flex flex-col gap-6 min-w-[306px] max-w-[306px] inset-0 dark:bg-gradient-to-br from-neutral-900 to-transparent z-50 dark:shadow-[0px_0px_24px_0px_rgba(0,0,0,0.5)]">
+  <h3
+    class="text-2xl font-semibold dark:text-white transition-colors duration-300 dark:group-hover:text-gray-100"
+  >
+    {title}
+  </h3>
+  <div class="flex flex-wrap justify-center gap-x-2 gap-y-3">
+    {
+      skills.map((Skill) => (
+        <div class="flex items-center justify-center p-2 border-[1px] cursor-pointer border-gray-700 rounded-lg gap-2 text-[14px] dark:text-gray-300 text-[#000000]  group">
+          <Skill.icon class="w-6 h-6 transition-transform transform group-hover:scale-110" />
+          <p>{Skill.name}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>

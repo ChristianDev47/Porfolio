@@ -1,0 +1,104 @@
+---
+import EndCode from "../icons/EndCode.astro";
+import OpenCode from "../icons/OpenCode.astro";
+import HeaderLink from "./HeaderLink.astro";
+import ThemeToggle from "./ThemeToggle.astro";
+import LanguageToggle from "./LanguageToggle.astro";
+import { getLangFromUrl, useTranslations, useTranslatedPath, } from '../i18n/utils';
+import ResponsiveNav from "./ResponsiveNav.astro";
+
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+---
+
+<header id="#header-nav" class="w-full bg-transparent fixed top-0 right-0 left-0 z-[100] ">
+  <nav class="flex justify-center w-full items-center font-[13px] mx-auto max-w-6xl py-6 px-8 flex-col">
+    <div class="flex justify-between w-full items-center ">
+      <a href={translatePath('/')} class="font-bold text-[20px] z-[100] flex items-center justify-center ml-[-15px] cursor-pointer animate-fade-down animate-duration-[3000ms]">
+        <OpenCode class="size-6 p-0 m-0" /><span class="text-[18px]">christian.dev</span><EndCode class="size-6" />
+      </a>
+      <div class="flex gap-[2rem] text-[15px] animate-fade-down animate-duration-[3000ms]">
+        <HeaderLink class="text__glowing md:block hidden" label='habilidades' href={translatePath('/#habilidades')}>
+          {t('nav.habilidades')}
+        </HeaderLink>
+        <HeaderLink class="text__glowing md:block hidden" label='proyectos' href={translatePath('/#proyectos')}>
+          {t('nav.proyectos')}
+        </HeaderLink>
+        <HeaderLink class="text__glowing md:block hidden" label='sobre-mí' href={translatePath('/#sobre-mí')}>
+          {t('nav.sobre-mí')}
+        </HeaderLink>
+        <HeaderLink class="text__glowing md:block hidden" label='contacto' href={translatePath('/#contacto')}>
+          {t('nav.contacto')}
+        </HeaderLink>
+        <LanguageToggle class="size-6"/>
+        <ThemeToggle class="size-6" />
+      </div>
+    </div>
+  </nav>
+</header>
+<ResponsiveNav/>
+
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav div div a")
+  
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label")?.toString() === entry.target.id) {
+              item.classList.add("dark:text-white", "text-[#20b556]");
+            } else {
+              item.classList.remove("dark:text-white", "text-[#20b556]");
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "50px 0px -50px 0px",
+      threshold: 0.1,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>
+
+<style>
+  header {
+    animation: nav-shadown 1s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 100px;
+  }
+
+  header {
+    @apply dark:bg-[#14181c]/90 bg-white/50;
+  }
+
+  @keyframes nav-shadown {
+    0% {
+      @apply dark:bg-gray-800/0 bg-white/0;
+    }
+    to {
+      @apply shadow-lg ring-1 dark:backdrop-blur-md backdrop-blur-xl ring-white/10;
+    }
+  }
+</style>

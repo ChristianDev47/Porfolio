@@ -1,0 +1,33 @@
+---
+interface Props {
+  checkActive?: boolean
+  href: string
+  label: string
+  class?: string
+}
+
+const {
+  href,
+  label,
+  class: className,
+  checkActive = true,
+  ...restOfProps
+} = Astro.props
+
+
+const currentPath = Astro.url.pathname
+const isActive = currentPath === href && checkActive
+---
+
+<a
+  href={href}
+  aria-label={label}
+  class:list={[
+    className,
+    "transition duration-200 z-[100] hover:text-[#20b556] dark:hover:text-white font-semibold",
+    isActive ? "dark:text-white text-[#20b556]" : "text-gray-600 dark:text-gray-400",
+  ]}
+  {...restOfProps}
+>
+  <slot />
+</a>

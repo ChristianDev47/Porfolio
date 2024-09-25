@@ -1,0 +1,87 @@
+{
+	"SEO_TITLE": "Porfolio de Christian Delgado",
+	"SEO_DESCRIPTION": "Contrata a usuario para crear juntos proyectos increibles. Desarrollador Full-Stack",
+	"HERO": {
+		"INFO": "Hola, soy",
+    "NAME": "Christian Delgado",
+    "DESCRIPTION": "Graduado en la carrera de Ingeniería de Sistemas. Apasionado por crear aplicaciones innovadoras combinando mis habilidades tanto en el front-end como en el back-end para ofrecer soluciones completas y efectivas, siempre con un enfoque en el aprendizaje y la mejora continua.",
+    "BTN_DOWNLOAD_CV": "Descargar CV",
+    "BTN_AVAILABLE_FOR_WORK": "Disponible para trabajar",
+    "SUB_1": "Ingeniero",
+    "SUB_2": "Programador",
+    "SUB_3": "Y...",
+    "SUB_4": "Desarrollador Full-Stack"
+    
+	},
+	"SKILLS": {
+    "SKILLS_INFO": {
+      "TITLE": "Mis Habilidades",
+      "SUBTITLE": "Aquí están mis habilidades técnicas y sociales, destacando mi experiencia en el desarrollo de soluciones y la colaboración efectiva en el entorno laboral.",
+      "OTHERS": "Otros",
+      "SOFT_SKILLS": "Habilidades Sociales"
+    }
+  },
+	"PROJECTS": {
+    "TITLE": "Proyectos Destacados",
+    "SUBTITLE": "Aquí algunos de mis proyectos que no te deberías perder.",
+    "INFO": "Mas detalles",
+    "BTN_CODE": "Código",
+    "BTN_PREVIEW": "Vista Previa"
+	},
+	"ABOUT": {
+		"TITLE": "Sobre Mí",
+    "CONTENT": {
+      "TEXT": [
+        {
+          "PARAGRAPH": "Me llamo Christian Delgado. Empecé en el mundo de la programación cuando era joven, iniciando mi camino con una antigua computadora que tenía en mi habitación. La curiosidad por los sistemas y las páginas que me rodeaban me llevó a estudiar años más tarde la carrera de Ingeniería de Sistemas, donde pude desarrollar la capacidad de resolver problemas y crear soluciones innovadoras."
+        },
+        {
+          "PARAGRAPH": "Durante mis prácticas profesionales, afianzaron mis habilidades técnicas y profesionales, aprendiendo a trabajar no solo en equipo sino también bajo presión, preparándome así para enfrentar los desafíos y obstáculos que se me presenten."
+        },
+        {
+          "PARAGRAPH": "Hoy, continúo con la misma pasión por aprender y evolucionar constantemente. Mi objetivo es dejar una huella en el mundo de la programación, así como en cada proyecto en el que participe, aportando no solo mis conocimientos y habilidades, sino también mis principios y valores, como la responsabilidad y la dedicación de hacer lo que mas me gusta, que es el desarrollo y la programación."
+        }
+      ]
+    },
+    "EDUCATION": {
+      "TITLE": "Educación y experiencia",
+      "CONTENT": [
+        {
+          "DATE": "Actualmente...",
+          "TITLE": "Buscando mejorar y nuevas oportunidades",
+          "SUBTITLE": "Actualmente estoy enfocado en seguir mejorando, con especial interés en conseguir oportunidades laborales.",
+          "DESCRIPTION": "Desde que me gradué de la universidad, he dedicado mi tiempo a aprender y dominar nuevas tecnologías. A lo largo de mi carrera universitaria adquirí una base sólida, y posteriormente, complementé esas habilidades con el aprendizaje de herramientas y tecnologías más avanzadas. Esto me ha permitido ampliar mi experiencia y competencias en el desarrollo web y la programación, lo que me ha impulsado a seguir creciendo día a día."
+        },
+        {
+          "DATE": "Marzo 2023 - Agosto 2023",
+          "LINK": "hhtps",
+          "TITLE": "Prácticas Profesionales",
+          "SUBTITLE": "Realicé prácticas profesionales en el ITDS (Instituto Tecnológico Domingo Savio) de Tarija durante seis meses.",
+          "DESCRIPTION": "Durante mis prácticas profesionales en el Instituto Tecnológico Domingo Savio (ITDS), desempeñé un rol activo en la administración de sistemas y bases de datos, así como en la gestión de las páginas web de la institución. Propuse e implementé mejoras significativas en los sistemas de información, logrando optimizar su eficiencia y funcionalidad. Asimismo, lideré exitosamente la migración completa de la base de datos a un nuevo sistema, garantizando una transición fluida y sin interrupciones de todos los registros institucionales. Esta experiencia me permitió aplicar y consolidar mis conocimientos en un entorno profesional, fortaleciendo mis habilidades para gestionar proyectos tecnológicos de manera integral y efectiva."
+        },
+        {
+          "DATE": "2019 - Junio 2024",
+          "LINK": "hhtps",
+          "TITLE": "Estudios Universitarios",
+          "SUBTITLE": "Estudié en la Universidad Privada Domingo Savio (UPDS) en Tarija, en la carrera de Ingeniería de Sistemas.",
+          "DESCRIPTION": "Completé mis estudios profesionales en la Universidad Privada Domingo Savio (UPDS), durante los cuales obtuve diversos reconocimientos académicos. Fui galardonado como el mejor estudiante de mi carrera en cuatro ocasiones consecutivas, y recibí un reconocimiento especial como el tercer mejor estudiante de toda la facultad. Al graduarme, me otorgaron una medalla a la excelencia por mi destacado rendimiento académico."
+        }
+      ]
+    }
+	},
+  "CONTACT": {
+    "TITLE": "Contacto",
+    "SUBTITLE": "¡Seamos increíbles",
+    "SUBTITLE2": "Juntos!",
+    "PARAGRAPH": "Como desarrollador, mi pasión por la programación y mi motivación para enfrentar nuevos desafíos me impulsan a crecer constantemente. Actualmente, estoy buscando oportunidades laborales donde pueda aplicar y expandir mis habilidades tanto personal como profesionalmente. Si estás buscando a alguien con dedicación, responsabilidad y pasión por lo que hace, ",
+    "CONTACT": "¡no dudes en contactarme!",
+    "BTN_CONTACT": "¡Ponte en contacto!"
+  },
+  "FOOTER": {
+    "TITLE": "Casi todos los derechos reservados"
+  },
+  "ERROR_404": {
+    "TITLE": "Página no encontrada",
+    "BACK_HOMEPAGE_BTN": "Volver a la página de inicio"
+  } 
+}

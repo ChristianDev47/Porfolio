@@ -1,0 +1,14 @@
+---
+import "@fontsource-variable/inter"
+---
+
+<h2 id="title" class={`flex items-center text-[30px] gap-x-3 font-bold ${Astro.props.className}`}>
+  <slot />
+</h2>
+
+<style>
+  .title {
+    font-family: 'Inter Variable', sans-serif;
+  }
+</style>
+

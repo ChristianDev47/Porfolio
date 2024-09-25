@@ -1,0 +1,79 @@
+---
+import LanguageIcon from "@/icons/Language.astro"
+import { LANGUAGES } from "@/i18n/ui"
+import { getLangFromUrl, useTranslatedPath, getRouteFromUrl } from '../i18n/utils';
+
+const lang  = getLangFromUrl(Astro.url);
+const translatePath = useTranslatedPath(lang);
+const route = getRouteFromUrl(Astro.url);
+---
+
+<div class="relative ml-1 mr-1 flex justify-center items-center">
+  <button
+    transition:persist
+    id="language-toggle-btn"
+    class=" border-none flex items-center gap-2 transition text-neutral-600 hover:text-neutral-900 dark:text-gray-400 dark:hover:text-white"
+  >
+    <LanguageIcon
+      class="language-toggle-icon size-[17px] transition-all"
+    />
+  </button>
+  <div
+    transition:persist
+    id="languages-menu"
+    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-800/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+  >
+    <div>
+      {
+        Object.entries(LANGUAGES).map(([lang, label]) => (
+          <a  href={translatePath(`/${route ? route : ''}`, lang)}>
+          <div class="languages-menu-option px-2 py-1.5 cursor-pointer hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
+             <p>{label.name}</p>
+          </div>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>
+
+<style>
+  #languages-menu.open {
+    display: inline;
+    animation: scale-up-center 0.15s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+
+  @keyframes scale-up-center {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+</style>
+
+<script is:inline>
+  const languagesMenu = document.getElementById("languages-menu")
+  
+  document.addEventListener("click", () => languagesMenu.classList.remove("open"))
+
+  document.getElementById("language-toggle-btn").addEventListener("click", (e) => {
+    e.stopPropagation()
+    const isClosed = !languagesMenu.classList.contains("open")
+    languagesMenu.classList[isClosed ? "add" : "remove"]("open")
+  })
+
+  document.querySelectorAll(".languages-menu-option").forEach((element) => {
+    element.addEventListener("click", (e) => {
+      localStorage.setItem("language", e.target.innerText.toLowerCase().trim())
+    })
+  })
+
+  document.addEventListener('astro:after-swap', () => {
+    window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+  })
+</script>

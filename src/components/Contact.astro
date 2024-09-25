@@ -1,0 +1,22 @@
+---
+import AllowWork from "./AllowWork.astro";
+import TitleSection from "./TitleSection.astro";
+import { getI18N } from "@/i18n"
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+
+<div class="flex flex-col justify-center items-center w-full max-w-[45.5rem] mb-20 gap-8 hero-section px-8">
+  <TitleSection>
+    {i18n.CONTACT.TITLE}
+  </TitleSection>
+  <div class="text-center space-y-6">
+    <h1 class="text-[24px] font-semibold"> {i18n.CONTACT.SUBTITLE} <span class="text-[#20b556] dark:text-[#4ade80]"> {i18n.CONTACT.SUBTITLE2} </span></h1>
+    <p class="text-[18px]">{i18n.CONTACT.PARAGRAPH}, <span class="text-[#20b556] dark:text-[#4ade80] font-semibold">{i18n.CONTACT.CONTACT}</span></p>
+  </div>
+  <a href="mailto:christiands.dev@gmail.com">
+    <AllowWork class="text-[25px] px-18 py-4">
+      <span class="text-[18px]">{i18n.CONTACT.BTN_CONTACT}</span>
+    </AllowWork>
+  </a>
+</div>
