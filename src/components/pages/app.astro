@@ -28,14 +28,14 @@ import Contact from '../Contact.astro';
 </main>
 
 
-	
 <script>
   import { annotate } from "rough-notation";
-  function init() {
+
+  function initializeAnnotations() {
     const notions = document.querySelectorAll('main section div h2');
     const annotations = Array.from(notions).map((node) => {
       const element = node as HTMLElement;
-  
+
       return annotate(element, {
         type: "underline",
         color: "#4ade80",
@@ -43,32 +43,33 @@ import Contact from '../Contact.astro';
         brackets: ["left", "right"],
         strokeWidth: 1.5,
         animationDuration: 1000,
-        animate: true, 
+        animate: true,
       });
     });
 
     const callback = (entries: any[]) => {
       entries.forEach((entry) => {
+        const index = Array.from(notions).indexOf(entry.target);
         if (entry.isIntersecting) {
-          const index = Array.from(notions).indexOf(entry.target);
-          annotations[index].show();
-          observer.unobserve(entry.target);
+          annotations[index].hide(); 
+          setTimeout(() => {
+            annotations[index].show(); 
+          }, 0);
         }
-      })
-    }
+      });
+    };
 
     const observer = new IntersectionObserver(callback, {
       root: null,
       rootMargin: "50px 0px -50px 0px",
       threshold: 0.1,
-    })
+    });
 
     notions.forEach((title) => {
-      observer.observe(title)
-    })
+      observer.observe(title);
+    });
   }
-  init()
 
-  document.addEventListener("astro:after-swap", init)
- 
+  initializeAnnotations();
+  document.addEventListener("astro:after-swap", initializeAnnotations);
 </script>

@@ -18,7 +18,7 @@
       "TITLE": "Mis Habilidades",
       "SUBTITLE": "Aquí están mis habilidades técnicas y sociales, destacando mi experiencia en el desarrollo de soluciones y la colaboración efectiva en el entorno laboral.",
       "OTHERS": "Otros",
-      "SOFT_SKILLS": "Habilidades Sociales"
+      "SOFT_SKILLS": "Habilidades Interpersonales"
     }
   },
 	"PROJECTS": {
@@ -54,14 +54,14 @@
         },
         {
           "DATE": "Marzo 2023 - Agosto 2023",
-          "LINK": "hhtps",
+          "LINK": "https://itdstarija.edu.bo/",
           "TITLE": "Prácticas Profesionales",
           "SUBTITLE": "Realicé prácticas profesionales en el ITDS (Instituto Tecnológico Domingo Savio) de Tarija durante seis meses.",
           "DESCRIPTION": "Durante mis prácticas profesionales en el Instituto Tecnológico Domingo Savio (ITDS), desempeñé un rol activo en la administración de sistemas y bases de datos, así como en la gestión de las páginas web de la institución. Propuse e implementé mejoras significativas en los sistemas de información, logrando optimizar su eficiencia y funcionalidad. Asimismo, lideré exitosamente la migración completa de la base de datos a un nuevo sistema, garantizando una transición fluida y sin interrupciones de todos los registros institucionales. Esta experiencia me permitió aplicar y consolidar mis conocimientos en un entorno profesional, fortaleciendo mis habilidades para gestionar proyectos tecnológicos de manera integral y efectiva."
         },
         {
           "DATE": "2019 - Junio 2024",
-          "LINK": "hhtps",
+          "LINK": "https://www.upds.edu.bo/sede/tarija/",
           "TITLE": "Estudios Universitarios",
           "SUBTITLE": "Estudié en la Universidad Privada Domingo Savio (UPDS) en Tarija, en la carrera de Ingeniería de Sistemas.",
           "DESCRIPTION": "Completé mis estudios profesionales en la Universidad Privada Domingo Savio (UPDS), durante los cuales obtuve diversos reconocimientos académicos. Fui galardonado como el mejor estudiante de mi carrera en cuatro ocasiones consecutivas, y recibí un reconocimiento especial como el tercer mejor estudiante de toda la facultad. Al graduarme, me otorgaron una medalla a la excelencia por mi destacado rendimiento académico."
