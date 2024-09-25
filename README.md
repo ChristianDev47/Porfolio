@@ -1,3 +1,4 @@
+
 # Mi Portafolio Personal
 
 ¡Bienvenido a mi portafolio personal! Este proyecto está diseñado para mostrar mi experiencia, habilidades, y proyectos destacados. El portafolio está disponible en dos idiomas (español e inglés) y ofrece la opción de modo oscuro y claro. Puedes explorar mis trabajos y aprender más sobre mí.
