@@ -34,7 +34,7 @@ Puedes ver una demo en vivo de mi portafolio [aquí](https://porfolio-christiand
 
 ## 📧 Contacto
 
-Puedes encontrarme en [LinkedIn](https://www.linkedin.com/in/christian-delgado-a2004932b/) o enviarme un correo a [christiands.dev@gmail.com](mailto:christiands.dev@gmail.com).
+Puedes encontrarme en [LinkedIn](https://www.linkedin.com/in/christian-delgado-sanchez/) o enviarme un correo a [christiands.dev@gmail.com](mailto:christiands.dev@gmail.com).
 
 ---
 
