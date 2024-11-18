@@ -16,7 +16,7 @@ import MongoDB from '@/icons/MongoDB.astro';
 import MySQL from '@/icons/MySQL.astro';
 import NextJS from '@/icons/NextJS.astro';
 import NodeJS from '@/icons/NodeJS.astro';
-import Npm from '@/icons/Npm.astro';
+import AWS from '@/icons/AWS.astro';
 import PostgreSQL from '@/icons/PostgreSQL.astro';
 import Postman from '@/icons/Postman.astro';
 import Python from '@/icons/Python.astro';
@@ -64,15 +64,15 @@ export const TechnicalSkills = {
   ],
   Others: [
     { name: 'Azure', icon: Azure },
+    { name: 'AWS', icon: AWS },
     { name: 'Git', icon: Git },
     { name: 'GitHub', icon: GitHub },
     { name: 'VS Code', icon: Vsc },
+    { name: 'Postman', icon: Postman },
     { name: 'Cloudinary', icon: Cloudinary },
     { name: 'Cloudflare', icon: Cloudflare },
-    { name: 'Postman', icon: Postman },
     { name: 'Vercel', icon: Vercel },
-    { name: 'Jest', icon: Jest },
-    { name: 'npm', icon: Npm }
+    { name: 'Jest', icon: Jest }
   ]
 };
 
