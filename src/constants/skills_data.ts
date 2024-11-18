@@ -63,7 +63,7 @@ export const TechnicalSkills = {
     { name: 'Docker', icon: Docker }
   ],
   Others: [
-    { name: 'Azure', icon: Azure },
+    { name: 'Azure DevOps', icon: Azure },
     { name: 'AWS', icon: AWS },
     { name: 'Git', icon: Git },
     { name: 'GitHub', icon: GitHub },
