@@ -1,28 +1,39 @@
 ---
 import Video from "@/components/Video.astro";
-import "@fontsource-variable/inter"
+import "@fontsource-variable/inter";
 import ProjectLinks from "@/components/ProjectLinks.astro";
 import GitHub from "@/icons/GitHub.astro";
 import Link from "@/icons/Link.astro";
-import BackColor from "@/components/BackColor.astro";
-import { getI18N } from "@/i18n"
+import { getI18N } from "@/i18n";
+import Tags from "../Tags.astro";
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 
+interface Tag {
+  name: string;  
+  icon: React.ComponentType;  
+}
+
 interface Props {
-  project: {title: string, subtitle: string, github: string, link: string, description: string, video:string}
+  project: {title: string, subtitle: string, github: string, link: string, tags: Tag[], description: string, video:string}
 }
 
 const { project } = Astro.props
 
-const { title, subtitle, github, link,  description, video } = project;
+const { title, subtitle, github, link,  description, tags, video } = project;
 ---
   <article class="flex flex-col justify-center items-center w-full mt-28 mb-5 animate-fade-down animate-duration-[3000ms] px-8">
-    <div class="flex flex-col justify-center items-center relative max-w-6xl w-full space-y-10">
-      <h1 class="titleProject text-4xl font-bold max-w-xl text-center md:text-3xl z-20">{title} - <span class="text-[#20b556] dark:text-[#4ade80]">{subtitle}</span></h1>
-      <p class="dark:text-gray-300 text-[#292929] text-md md:text-[16px] text-center max-w-5xl w-full z-20">{description}</p>
-      <BackColor/>
+    <div class="flex flex-col justify-center items-center relative max-w-6xl w-full space-y-10 title">
+      <h1 class="titleProject text-4xl font-bold max-w-xl text-center md:text-3xl z-20">{title} - <span class="text-[#4ade80]">{subtitle}</span></h1>
+      <div class="flex space-x-2">
+        {
+          tags.map(tag => (
+            <Tags title={tag.name} icon={tag.icon}/>
+          ))
+        }
+      </div>
+      <p class="text-gray-200 text-md md:text-[16px] text-center max-w-5xl w-full z-20">{description}</p>
       <Video video={video}/>
       <div  class="flex gap-5">
         <ProjectLinks href={github}>

@@ -3,26 +3,81 @@ import type { JSX } from 'astro/jsx-runtime';
 interface Props {
   title: string;
   skills: JSX.Element[];
+  val: string;
 }
 
-const { title, skills } = Astro.props;
+const { title, skills, val } = Astro.props;
 ---
 
-<div
-  class="relative rounded-lg p-6 text-center flex flex-col gap-6 min-w-[306px] max-w-[306px] inset-0 dark:bg-gradient-to-br from-neutral-900 to-transparent z-50 dark:shadow-[0px_0px_24px_0px_rgba(0,0,0,0.5)]">
-  <h3
-    class="text-2xl font-semibold dark:text-white transition-colors duration-300 dark:group-hover:text-gray-100"
-  >
-    {title}
-  </h3>
-  <div class="flex flex-wrap justify-center gap-x-2 gap-y-3">
-    {
-      skills.map((Skill) => (
-        <div class="flex items-center justify-center p-2 border-[1px] cursor-pointer border-gray-700 rounded-lg gap-2 text-[14px] dark:text-gray-300 text-[#000000]  group">
-          <Skill.icon class="w-6 h-6 transition-transform transform group-hover:scale-110" />
-          <p>{Skill.name}</p>
-        </div>
-      ))
-    }
+<div class="w-full grid grid-cols-3">
+  <div class="text-[40px] leading-6 lg:col-span-1 col-span-3 lg:mb-0 mb-[2.9rem] lg:text-start text-center">
+    <p class="text-[#ffffff] font-semibold">{title}</p>
+  </div>
+  <div class="w-full lg:col-span-2 col-span-3">
+    <div class="grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 gap-x-2 gap-y-3">
+      {
+        skills.map((Skill) => (
+          <div class="group relative flex h-[30px] lg:ml-0 ml-5 shrink-0 items-center overflow-hidden rounded-md px-3 leading-none outline-none xl:h-[27px] xl:py-[7px] after:opacity-0 space-x-1 text__glowing  cursor-pointer group text__show transition duration-200" >
+            <Skill.icon class="size-6 text-[#ced1d4] group-hover:text-[#4ade80]"/>
+            <span class="z-20 bg-gradient-to-b group-hover:text-[#4ade80]  from-white via-white via-25% to-white/60 bg-clip-text text-sm leading-none tracking-tighter text-transparent xl:text-[14px] lg:text-xs">{Skill.name}</span>
+          </div>
+        ))
+      }
+    </div>
+    <div class="mt-3.5 h-px w-full overflow-hidden bg-gray-new-15 " aria-hidden="true">
+      <div id={`progress-bar-${val}`} class="progress-bar h-full w-full origin-left scale-x-0 bg-[linear-gradient(90deg,rgba(228,229,231,0.10)_0%,#E4E5E7_100%)]  transition-[transform,opacity] duration-[400ms] ease-linear opacity-100"></div>
+    </div>
   </div>
 </div>
+
+<style>
+  .text__show {
+    transition: text-shadow 0.3s ease;
+  }
+  .text__show:hover {
+    text-shadow:
+    1px 1px 20px #4ade80;
+  }
+  .progress-bar {
+    transform: scaleX(0);
+    opacity: 1; 
+    transition: transform 1s ease-in-out, opacity 1s ease-out;
+    background: linear-gradient(90deg, rgba(228, 229, 231, 0.10) 0%, #E4E5E7 100%);
+  }
+
+  .progress-bar.active {
+    transform: scaleX(1); 
+    opacity: 1; 
+  }
+
+  .progress-bar.inactive {
+    transform: scaleX(0); 
+    opacity: 0;
+  }
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const progressBars = document.querySelectorAll(".progress-bar");
+  let currentIndex = 0;
+
+  function activateNextBar() {
+    if (currentIndex > 0) {
+      const previousBar = progressBars[currentIndex - 1];
+      previousBar.classList.add("inactive");
+    }
+
+    if (currentIndex < progressBars.length) {
+      const bar = progressBars[currentIndex];
+      bar.classList.remove("inactive"); 
+      bar.classList.add("active"); 
+      currentIndex++;
+
+      setTimeout(activateNextBar, 2000); 
+    }
+  }
+
+  activateNextBar();
+});
+
+</script>

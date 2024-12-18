@@ -1,5 +1,4 @@
 ---
-import Arrow from "../icons/Arrow.astro";
 import GitHub from "../icons/GitHub.astro";
 import Link from "../icons/Link.astro";
 import LinkButton from "./LinkButton.astro";
@@ -17,63 +16,43 @@ const translatePath = useTranslatedPath(lang);
 const PROJECTS_DATA = Astro.currentLocale === 'es' ? PROJECTS : PROJECT_EN;
 ---
 
-<div class="flex flex-col gap-y-5 justify-center items-center w-full max-w-6xl px-8">
+<div class="flex flex-col gap-y-5 justify-center items-center w-full max-w-7xl px-8">
   <TitleSection>
-    {i18n.PROJECTS.TITLE.split(' ')[0]} <span class="text-[#20b556] dark:text-[#4ade80]">{i18n.PROJECTS.TITLE.split(' ')[1]}</span>
+    {i18n.PROJECTS.TITLE.split(' ')[0]} <span class="text-[#4ade80]">{i18n.PROJECTS.TITLE.split(' ')[1]}</span>
   </TitleSection>
-  <p class="dark:text-gray-400 text-[#292929] text-[16px] text-center max-w-[45rem]">{i18n.PROJECTS.SUBTITLE}</p>
+  <p class="text-gray-200 text-[16px] text-center max-w-[45rem]">{i18n.PROJECTS.SUBTITLE}</p>
 
-  <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-12 gap-y-8">
+  <div class="flex justify-center gap-x-5 gap-y-1 flex-wrap w-full">
     {
       PROJECTS_DATA.map(({ image, title, subtitle, resume, tags, link, github }) => (
-        <article class="w-full flex flex-col overflow-hidden mt-8 rounded-2xl dark:border dark:border-neutral-400/10 lg:w-full max-w-[28rem]  bg-white/5  dark:shadow-[0px_0px_24px_0px_rgba(0,0,0,0.4)] shadow-[0px_0px_24px_0px_rgba(0,0,0,0.2)]">
-          <div class="w-full h-[250px] dark:border-none border-b-2 border-gray-300">
-            <img alt="Image" class="object-cover object-top w-full h-full transition duration-500 sm:h-full " loading="lazy" src={image} />
-          </div>
-          <div class="w-full flex flex-col justify-between h-full  p-5">
-            <div class="w-full space-y-4">
-            <h3 class="text-[20px] font-bold text-gray-800 dark:text-gray-100">
-              {title} - {subtitle}
-            </h3> 
-            <div class="flex flex-wrap mt-2">
-              <ul class="flex flex-row mb-2 gap-2 flex-wrap">
-                {tags.map((tag) => (
-                  <li>
-                    <span
-                      class={`flex gap-x-2 rounded-full bg-[#383838] text-white text-xs py-1 px-2 `}
-                    >
-                      <tag.icon class="size-4" />
-                      {tag.name}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-  
-              <div class="mt-2 text-gray-700 dark:text-gray-400 text-[15px]">
-                {resume}
-              </div>
-            </div>
-          </div>
-              <footer class="flex items-end justify-between mt-4 gap-x-4 w-full">
-                <div>
-                  {github && (
-                  <LinkButton href={github}>
-                    <GitHub class="size-6" />
-                    {i18n.PROJECTS.BTN_CODE}
-                  </LinkButton>
-                )}
-                {link && (
-                  <LinkButton href={link}>
-                    <Link class="size-6" />
-                    {i18n.PROJECTS.BTN_PREVIEW}
-                  </LinkButton>
-                )}
+        <article class="max-w-[386px] flex flex-col overflow-hidden mt-8 rounded-2xl border border-neutral-400/10 lg:w-full  bg-white/5  shadow-[0px_0px_24px_0px_rgba(0,0,0,0.4)] cursor-pointer">
+          <div class="w-full h-[220px] border-none border-b-2 border-gray-300 relative group">
+              <div class="absolute top-0 right-0 group-hover:bg-[#131313fb] z-50 transition-all ease-in-out duration-[.45s] w-full h-full ">
+                <div class="relative flex flex-col justify-center items-center text-center opacity-0 transition-all ease-in-out  duration-[.55s] group-hover:opacity-100 w-full h-full p-4 space-y-2">
+                  <p class=" text-[25px] font-semibold">{title}</p>
+                  <p class="text-[14px]">{resume}</p>
+                  <footer class="flex flex-col items-center justify-center mt-4 gap-x-4 w-full space-y-2">
+                    <div>
+                      {github && (
+                      <LinkButton href={github}>
+                        <GitHub class="size-4" />
+                        {i18n.PROJECTS.BTN_CODE}
+                      </LinkButton>
+                    )}
+                    {link && (
+                      <LinkButton href={link}>
+                        <Link class="size-4" />
+                        {i18n.PROJECTS.BTN_PREVIEW}
+                      </LinkButton>
+                    )}
+                    </div>
+                    <LinkInLine href={translatePath(`/project/${title.toLowerCase()}`)}>
+                      {i18n.PROJECTS.INFO}{" "}
+                    </LinkInLine>
+                  </footer>
                 </div>
-                <LinkInLine href={translatePath(`/project/${title.toLowerCase()}`)}>
-                  {i18n.PROJECTS.INFO}{" "}
-                  <Arrow/>
-                </LinkInLine>
-              </footer>
+              </div>
+              <img alt="Image" class="object-cover object-top w-full h-full transition duration-500 sm:h-full opacity-90 group-hover:scale-110" loading="lazy" src={image} />
           </div>
         </article>
       ))

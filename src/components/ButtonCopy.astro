@@ -1,0 +1,63 @@
+---
+import Copy from "../icons/Copy.astro";
+import Check from "../icons/Check.astro";
+---
+
+<button class=" absolute right-2 top-2 rounded border border-gray-7 bg-gray-9 p-1.5 text-gray-new-80 opacity-0 transition-[background-color,opacity,visibility] duration-200 hover:bg-white group-hover:visible group-hover:opacity-100 border-gray-3 bg-gray-new-10 text-gray-8 hover:bg-gray-new-8 sm:visible sm:opacity-100 hover:text-black" id="copyButton" type="button" aria-label="Copy">
+  <Copy class="copy-icon" />
+  <Check class="check-icon hidden" />
+</button>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
+
+<script>
+const codeContent = `export async function dailyMotivation() {
+    const tasks = ["Code", "Improve", "Learn", "Grow"];
+    let energy = 100;
+
+    tasks.forEach((task, idk) => {
+        setTimeout(() => {
+            console.log(energy > 0 
+                ? \`\${idk + 1}: \${task}! Keep going!\` 
+                : "⚠️ Struggling? Take a breath, remember why you started!");
+            energy -= 25;
+        }, idk * 3000);
+    });
+
+    setTimeout(() => {
+        console.log("✨ Keep pushing, greatness awaits! 🚀");
+    }, tasks.length * 3000);
+}`;
+
+const button = document.getElementById('copyButton')
+
+if (button) {
+  button.addEventListener('click', function() {
+    // Copiar al portapapeles
+    const textArea = document.createElement('textarea');
+    textArea.value = codeContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+
+    const copyIcon = button.querySelector('.copy-icon');
+    const checkIcon = button.querySelector('.check-icon');
+
+    if (copyIcon && checkIcon) {
+      copyIcon.classList.add('hidden');  
+      checkIcon.classList.remove('hidden');  
+    }
+
+    setTimeout(() => {
+      if (copyIcon && checkIcon) {
+        copyIcon.classList.remove('hidden');
+        checkIcon.classList.add('hidden');
+      }
+    }, 2000);
+  })}
+</script>

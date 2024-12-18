@@ -16,33 +16,22 @@ const { TITLE, SUBTITLE, ICON, DESCRIPTION, LINK, DATE } = Astro.props
 ---
 
 <div
-  class="relative ml-12 my-6"
+  class="relative my-6 "
 >
-  <div class="relative ">
-    <div class="top-2">
-      <span class="text-[#20b556] dark:text-[#4ade80] -left-[44px] top-2 size-5 bg-transparent border-[5px] dark:border-[#4ade80] border-[#20b556] absolute rounded-full text-5xl"
-        ></span
-      >
+  <div class="relative flex justify-center items-center flex-col space-y-4">
+    <div class="relative w-[72px] h-[72px] lg:flex items-center justify-center bg-[#4ade80] rounded-full hidden">
+      <ICON class="absolute size-10 text-black"/>
     </div>
-  </div>
-  <div class="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3 rounded-2xl dark:border-none border-[1px] border-gray-400 dark:bg-white/5 p-5 w-full  dark:shadow-[0px_0px_24px_0px_rgba(0,0,0,0.4)]">
-  <span class="border-2 dark:border-[#4ade80] border-[#20b556] absolute h-[90%] -left-[36px] top-10"></span>
-   <div class="flex gap-3">
-      <div class="relative w-[72px] h-[72px] lg:flex items-center justify-center bg-[#383838] dark:bg-white rounded-xl hidden">
-        <ICON class="absolute size-12"/>
-      </div>
-      <div class="leading-5">
-        <h3 class="text-lg font-semibold ">{TITLE}</h3>
-        <p class="text-[15px] dark:text-gray-400 text-gray-700">{SUBTITLE}</p>
-        <time class="p-0 m-0 text-sm dark:text-gray-400 text-gray-700">{DATE}</time>
-      </div>
-   </div>
-    <p class="text-[14px]">{DESCRIPTION}</p>
+    <div class="leading-5">
+      <h3 class="text-lg font-semibold ">{TITLE}</h3>
+      <p class="text-[16px] text-gray-400">{SUBTITLE}</p>
+      <time class="p-0 m-0 text-sm text-gray-200">{DATE}</time>
+    </div>
+    <p class="text-[16px]">{DESCRIPTION}</p>
     {
       LINK && (
         <LinkInline href={LINK}>
-          Saber más{" "}
-          <Arrow/>
+          Saber más
         </LinkInline>
       )
     }

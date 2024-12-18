@@ -4,47 +4,48 @@ import GitHub from '../icons/GitHub.astro';
 import Download from '../icons/Download.astro';
 import LinkButton from './LinkButton.astro';
 import DownloadButton from './DownloadButton.astro';
-import AllowWork from './AllowWork.astro';
 
 import { getI18N } from "@/i18n"
+import Code from './Code.astro';
+
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 const CV = Astro.currentLocale === 'es' ? '/cv/CV_Christian_Delgado_FullStackDeveloper.pdf' : '/cv/CV_Christian_Delgado_FullStackDeveloper_English.pdf';
 ---
-<div class="grid grid-cols-5 items-center w-full max-w-6xl lg:gap-16 gap-0 lg:mt-36 mt-24 mb-10 hero-section relative animate-fade-down animate-duration-[3000ms] px-8">
-  <div class="dark:absolute hidden dark:block inset-1 z-0  place-items-center left-[2rem]"><div class="-translate-x-1/5 h-4/6 w-3/4 -rotate-12 rounded-tl-3xl rounded-br-3xl bg-gradient-to-l from-blue-900 to-teal-600 opacity-40 blur-3xl"></div></div>
-  <div class="flex flex-col lg:col-span-3 col-span-5 justify-start lg:items-start items-center w-full  relative z-10 ">
-    <div class="flex flex-col gap-[1rem]  justify-start lg:items-start lg:w-full lg:max-w-full max-w-lg lg:text-start text-center">
-      <div class="lg:text-start text-center font-bold leading-[3.2rem] ">
-        <p class="text-[30px] ">{i18n.HERO.INFO}</p>
-        <h3 class="text-[2.8rem] "> {i18n.HERO.NAME}</h3>
-        <p class="sm:text-[2.8rem] text-[2rem] leading-[3rem] text-[#20b556] dark:text-[#4ade80] space-before"  id="ChangeTitle" data-sub1={i18n.HERO.SUB_1} data-sub2={i18n.HERO.SUB_2} data-sub3={i18n.HERO.SUB_3} data-sub4={i18n.HERO.SUB_4}>{(" ")}</p>
+<div class="flex flex-col items-center w-full max-w-6xl lg:gap-16 gap-0 lg:mt-[11rem] mt-24 hero-Code relative animate-fade-down animate-duration-[3000ms] px-8">
+  <div class="flex flex-col justify-start items-center w-full relative z-10 ">
+    <div class="flex flex-col gap-[1rem]  justify-center lg:w-full lg:max-w-full max-w-lg text-center">
+      <div class=" text-center font-bold leading-[3.2rem] title">
+        <h3 class="text-[2.5rem] ">{i18n.HERO.INFO} {i18n.HERO.NAME}</h3>
+        <p class="sm:text-[3rem] text-[2rem] leading-[3rem] text-[#4ade80] space-before"  id="ChangeTitle" data-sub1={i18n.HERO.SUB_1} data-sub2={i18n.HERO.SUB_2} data-sub3={i18n.HERO.SUB_3} data-sub4={i18n.HERO.SUB_4}>{(" ")}</p>
       </div>
-      <p class="text-[15px] text-pretty  font-semibold dark:text-gray-300 text-[#292929]">{i18n.HERO.DESCRIPTION}
-      </p>
+    <div class="w-full flex justify-center">
+      <p class="text-[16px] text-pretty text-center lg:w-[85%] text-gray-300">{i18n.HERO.DESCRIPTION}</p>
+    </div>
       <div>
-        <div class="flex gap-2 text-[12px] font-semibold lg:justify-start justify-center">
+        <div class="flex gap-2 text-[12px] font-semibold justify-center">
+          <LinkButton href={'https://www.linkedin.com/in/christian-delgado-sanchez/'}>
+            <Linkedin class="size-4" />
+            Linkedin
+          </LinkButton>
           <DownloadButton href={CV}>
             <Download class="size-4 hover:fill-black" />
               {i18n.HERO.BTN_DOWNLOAD_CV}
           </DownloadButton>
-          <LinkButton href={'https://www.linkedin.com/in/christian-delgado-sanchez/'}>
-            <Linkedin class="size-4" />
-              Linkedin
-          </LinkButton>
           <LinkButton href={'https://github.com/ChristianDev47'}>
             <GitHub class="size-4" />
               GitHub
           </LinkButton>
         </div>
-        <div class="flex gap-2 my-3 lg:justify-start justify-center">
-          <AllowWork>{i18n.HERO.BTN_AVAILABLE_FOR_WORK}</AllowWork>
-        </div>
       </div>
     </div>
-  </div>
-  <div class="relative w-full lg:py-16 py-5 lg:col-span-2 col-span-5 flex justify-center items-center ">
-    <img class="rounded-full lg:max-w-[21rem] max-w-[15rem] dark:shadow-[0px_0px_24px_0px_rgba(0,0,0,0.2)] dark:border-none border-2 border-[#5bdf8c]" src="/principal/profile_picture.webp" alt="profile" />
+    <div class="relative w-full py-10 ">
+      <img class=" absolute left-0 right-0 m-auto z-50 bottom-[38px] h-[10rem] rounded-b-full" src="/principal/profile_picture.webp" alt="">
+      <div class="image_container"></div>
+    </div>  
+    <Code/>
+    <div class="mt-[2rem] mx-[1rem]">
+    </div>
   </div>
 </div>
 
@@ -55,30 +56,35 @@ const CV = Astro.currentLocale === 'es' ? '/cv/CV_Christian_Delgado_FullStackDev
 </style>
 
 <script>
-  import TypeIt from "typeit";
+import TypeIt from "typeit";
 
   function init() {
     const titleElement = document.getElementById("ChangeTitle");
     if(titleElement){
       const sub1 = titleElement?.getAttribute("data-sub1");
+      titleElement.innerText = sub1 ?? ''
       const sub2 = titleElement?.getAttribute("data-sub2");
       const sub3 = titleElement?.getAttribute("data-sub3");
       const sub4 = titleElement?.getAttribute("data-sub4");
       new TypeIt("#ChangeTitle", {
-        speed: 100,
+        speed: 110,
         waitUntilVisible: true,
+        cursor: true,
+        cursorChar: ''
+
       })
-      .type(sub1 ?? '', { delay: 500 })
-      .pause(500)
-      .delete(12)
+      .pause(1000)
+      .delete(22)
       .type(sub2 ?? '', { delay: 500 })
-      .pause(500)
+      .pause(800)
       .delete(14)
       .type(sub3 ?? '')
-      .pause(500)
+      .pause(800)
       .delete(6)
       .type(sub4 ?? '')
       .pause(300)
+      .delete(0)
+      .options({cursorChar: '', cursor: false})
       .go();
     }
   }

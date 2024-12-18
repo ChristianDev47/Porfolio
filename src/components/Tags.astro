@@ -1,0 +1,17 @@
+---
+const { title, icon: Icon } = Astro.props;
+---
+
+<div
+  class="group relative flex h-[30px] shrink-0 items-center overflow-hidden rounded-md px-3 leading-none outline-none xl:h-[27px] xl:py-[7px] after:opacity-40 cursor-pointer"
+  ><span
+    class="border-linear absolute inset-0 z-10 rounded-[inherit] bg-white/[0.05] group-hover:opacity-0 opacity-0"
+    aria-hidden="true"></span><span
+    class="absolute inset-0 z-10 rounded-[inherit]  transition-colors duration-200 before:absolute before:inset-px before:rounded-[inherit] before:bg-black after:absolute after:left-1/2 after:top-full after:h-9 after:w-[67px] after:-translate-x-1/2 after:rounded-full after:bg-[#D9D9D9] after:blur-md after:transition-opacity after:duration-200 bg-[radial-gradient(64.39%_110%_at_50%_120%,#FFFFFF_27.27%,rgba(255,255,255,.1)_69.23%)] !opacity-100 after:opacity-40"
+    aria-hidden="true"></span>
+    <Icon class="relative z-20 mr-1 size-4 text-[#ced1d4]" />
+    <span
+    class="z-20 bg-gradient-to-b from-white via-white via-25% to-white/50 bg-clip-text text-sm leading-none tracking-tighter text-transparent xl:text-[13px] lg:text-xs"
+    >{title}</span
+  ></div
+>

@@ -1,36 +1,133 @@
 ---
-import SkillsSection  from './SkillSection.astro';
+import SkillsSection from './SkillSection.astro';
 import TitleSection from './TitleSection.astro';
-import { TechnicalSkills, SoftSkills, SoftSkills_en } from '@/constants/skills_data'
+import {
+  TechnicalSkills,
+  SoftSkills,
+  SoftSkills_en,
+} from '@/constants/skills_data';
 
-import { getI18N } from "@/i18n"
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+import { getI18N } from '@/i18n';
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
-const SoftSkills_data = Astro.currentLocale === 'es' ? SoftSkills : SoftSkills_en;
-
+const SoftSkills_data =
+  Astro.currentLocale === 'es' ? SoftSkills : SoftSkills_en;
 ---
 
-<div class="flex flex-col gap-y-5 justify-center items-center w-full max-w-6xl px-8">
+<div
+  class="flex flex-col gap-y-5 max-h-full justify-center items-center w-full max-w-6xl md:px-8 px-2"
+>
   <TitleSection>
-    {i18n.SKILLS.SKILLS_INFO.TITLE.split(' ')[0]} <span class="text-[#20b556] dark:text-[#4ade80]">{i18n.SKILLS.SKILLS_INFO.TITLE.split(' ')[1]}</span>
+    {i18n.SKILLS.SKILLS_INFO.TITLE.split(' ')[0]}
+    <span class="text-[#4ade80]"
+      >{i18n.SKILLS.SKILLS_INFO.TITLE.split(' ')[1]}</span
+    >
   </TitleSection>
-  <p class="dark:text-gray-400 text-[16px] text-center max-w-[45rem] text-[#292929]">{i18n.SKILLS.SKILLS_INFO.SUBTITLE}</p>
-  <div class="flex lg:justify-between justify-center items-center gap-[1rem] flex-wrap relative z-50">
-    <SkillsSection title="Frontend" skills={TechnicalSkills.Frontend} />
-    <SkillsSection title="Backend" skills={TechnicalSkills.Backend} />
-    <SkillsSection title={i18n.SKILLS.SKILLS_INFO.OTHERS} skills={TechnicalSkills.Others} />
+  <p
+    class="text-gray-200 text-[16px] text-center max-w-[45rem]"
+  >
+    {i18n.SKILLS.SKILLS_INFO.SUBTITLE}
+  </p>
+  <div
+    class="flex lg:justify-between justify-center items-center gap-[4rem] flex-wrap relative z-50 mt-[2rem]"
+  >
+    <SkillsSection title="Frontend" skills={TechnicalSkills.Frontend} val="0" />
+    <SkillsSection title="Backend" skills={TechnicalSkills.Backend} val="1" />
+    <SkillsSection
+      title={i18n.SKILLS.SKILLS_INFO.OTHERS}
+      val="2"
+      skills={TechnicalSkills.Others}
+    />
   </div>
-  <div class="flex flex-col justify-center items-center dark:bg-gradient-to-br from-neutral-900 to-transparent rounded-xl lg:max-w-2xl sm:max-w-[38rem] max-w-[308px]  overflow-hidden p-2 dark:shadow-[0px_0px_24px_0px_rgba(0,0,0,0.5)]">
-
-    <h3 class="font-semibold text-[25px] m-2">{i18n.SKILLS.SKILLS_INFO.SOFT_SKILLS}</h3>
-    <div class="flex justify-center gap-[3rem] flex-wrap  px-2 py-4 rounded-[1rem] w-full">
-      {SoftSkills_data.map((Skill) => (
-        <div class=" flex flex-col justify-center items-center gap-1 dark:text-gray-300 text-[#292929]">
-          <Skill.icon class="size-8" />
-          <p class="font-semibold text-[14px]">{Skill.name}</p>
+  <div class="w-full">
+    <h1 class="title mt-[2.9rem] text-[32px] text-center text-[#ffffff]">{i18n.SKILLS.SKILLS_INFO.SOFT_SKILLS}</h1>
+    <section class="ai-index safe-paddings relative flex justify-center items-center ">
+      <div class="relative z-0 mx-auto w-[1460px] max-w-full ">
+        <div class="relative overflow-hidden flex justify-center mt-[2rem] md:px-[9rem] sm:px-[8rem] px-[6rem]">
+          <img class="relative w-[40rem] max-w-full h-auto" src="/principal/programmer.webp" alt="" aria-hidden="true"/>
         </div>
-      ))}
-    </div>
+        <div class="absolute left-0 right-0 top-0 mx-auto w-full max-h-full  aspect-[1.66667] [mask-image:radial-gradient(ellipse_55%_70%_at_50%_50%,#000_60%,transparent_100%)]">
+          <svg
+            class="h-[568px] max-h-full w-full"
+            viewBox="0 0 1280 768"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            {SoftSkills_data.map((Skill) => (
+               <g class="movetext relative mix-blend-hard-light transition-transform duration-200" style={`transform: none; transform-origin: ${Skill.origin};`}>
+              <text class="sm:text-xl text-5xl font-medium uppercase skill-text size-6" x={Skill.x} y={Skill.y} fill="currentColor">{Skill.name}</text>
+            </g>
+            ))}
+          </svg>
+        </div>
+      </div>
+    </section>
   </div>
 </div>
+
+
+<style>
+
+.skill-text {
+    font-size: 21px;
+    text-transform: uppercase;
+    font-weight: 500;
+    fill: #ccc6ec;
+    opacity: 0.8;
+    filter: blur(2px);
+    cursor: pointer;
+    transition: opacity 0.5s, filter 0.5s;
+  }
+
+  .skill-text.clear {
+    opacity: 1;
+    filter: blur(0);
+    font-weight: 600;
+    fill: #fff;
+  }
+
+  .movetext {
+    transition:transform 0.5s ease;
+    z-index:10;
+    animation:floating 4s ease-in-out infinite;
+    transform-origin:bottom center;
+  }
+
+  
+  @keyframes floating {
+    0%,100%{ transform:translateY(0) rotate(-4deg); }
+    50%{ transform:translateY(-25px) rotate(4deg); }
+  }
+
+  .movetext:nth-child(2){ animation-duration:4s; }
+  .movetext:nth-child(3){ animation-duration:3.5s; }
+  .movetext:nth-child(4){ animation-duration:5s; }
+  .movetext:nth-child(5){ animation-duration:5.5s; }
+</style>
+
+<script>
+  const texts: NodeListOf<HTMLElement> = document.querySelectorAll(".skill-text");
+  const maxVisible: number = 3;
+  let visibleTexts: HTMLElement[] = [];
+
+  for (let i = 0; i < maxVisible; i++) {
+    const text = texts[Math.floor(Math.random() * texts.length)];
+    text.classList.add("clear");
+    visibleTexts.push(text);
+  }
+
+  texts.forEach((text: HTMLElement) => {
+    text.addEventListener("mouseenter", () => {
+      if (visibleTexts.includes(text)) return;
+      if (visibleTexts.length >= maxVisible) {
+        const firstText: HTMLElement | undefined = visibleTexts.shift();
+        if (firstText) {
+          firstText.classList.remove("clear");
+        }
+      }
+
+      text.classList.add("clear");
+      visibleTexts.push(text);
+    });
+  });
+</script>

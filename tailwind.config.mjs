@@ -8,6 +8,9 @@ export default {
       maxWidth: {
         '6xl': '66rem',
       },
+      screens: {
+        'exp': '1274px',
+      },
     },
   },
   plugins: [

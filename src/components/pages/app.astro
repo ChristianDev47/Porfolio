@@ -5,22 +5,34 @@ import SectionContainer from '../SectionContainer.astro';
 import Projects from '../Projects.astro';
 import About from '../About.astro';
 import Contact from '../Contact.astro';
+import Education from '../Education.astro';
+import Experience from '../Experience.astro';
+import Certifications from '../Certifications.astro';
 ---
 
-<main class="w-full flex flex-col gap-[10rem]">
+<main class="w-full flex flex-col gap-[6rem]">
 	<SectionContainer>
 		<Hero>
 			</slot>
 		</Hero>
 	</SectionContainer>
+  <SectionContainer id="sobre-mí">
+    <About/>
+  </SectionContainer>
 	<SectionContainer  id="habilidades">
 		<Skills/>
 	</SectionContainer>
+  <SectionContainer id="educación">
+    <Education/>
+  </SectionContainer>
 	<SectionContainer id="proyectos">
 		<Projects/>
 	</SectionContainer>
-	<SectionContainer id="sobre-mí">
-		<About/>
+	<SectionContainer id="experiencia">
+		<Experience/>
+	</SectionContainer>
+	<SectionContainer id="certificaciones">
+		<Certifications/>
 	</SectionContainer>
 	<SectionContainer id="contacto">
 		<Contact/>

@@ -28,12 +28,13 @@ import Vercel from '@/icons/Vercel.astro';
 import Vite from '@/icons/Vite.astro';
 import Vsc from '@/icons/Vsc.astro';
 import Azure from '@/icons/Azure.astro';
+import Jenkins from '@/icons/Jenkins.astro';
+import GraphQL from '@/icons/GraphQL.astro';
 import Solve from '@/icons/Solve.astro';
 import Adaptability from '@/icons/Adaptability.astro';
 import Comunication from '@/icons/Comunication.astro';
 import Colaboration from '@/icons/Colaboration.astro';
 import Time from '@/icons/Time.astro';
-import Feedback from '@/icons/Feedback.astro';
 import Proactivity from '@/icons/Proactivity.astro';
 
 
@@ -63,37 +64,36 @@ export const TechnicalSkills = {
     { name: 'Docker', icon: Docker }
   ],
   Others: [
-    { name: 'Azure DevOps', icon: Azure },
     { name: 'AWS', icon: AWS },
     { name: 'Git', icon: Git },
     { name: 'GitHub', icon: GitHub },
+    { name: 'Jenkins', icon: Jenkins },
+    { name: 'GraphQL', icon: GraphQL },
     { name: 'VS Code', icon: Vsc },
     { name: 'Postman', icon: Postman },
     { name: 'Cloudinary', icon: Cloudinary },
     { name: 'Cloudflare', icon: Cloudflare },
     { name: 'Vercel', icon: Vercel },
-    { name: 'Jest', icon: Jest }
+    { name: 'Jest', icon: Jest },
+    { name: 'Azure', icon: Azure }
   ]
 };
 
 
 export const SoftSkills_en = [
-  { name: 'Adaptability', icon: Adaptability },
-  { name: 'Communication', icon: Comunication },
-  { name: 'Collaboration', icon: Colaboration },
-  { name: 'Problem Solving', icon: Solve },
-  { name: 'Proactivity', icon: Proactivity },
-  { name: 'Time Management', icon: Time },
-  { name: 'Feedback', icon: Feedback }
+  { name: 'Adaptability', origin: '289.431px 138.72px', x: '12%', y: '19%', icon: Adaptability },
+  { name: 'Communication', origin: '928.966px 184.8px', x: '72%', y: '19%', icon: Comunication },
+  { name: 'Collaboration', origin: '219.772px 307.68px', x: '2%', y: '45%', icon: Colaboration },
+  { name: 'Problem Solving', origin: '1041.91px 307.68px', x: '78%', y: '45%', icon: Solve },
+  { name: 'Proactivity', origin: '341.481px 576.48px', x: '1%', y: '78%', icon: Proactivity },
+  { name: 'Time Management', origin: '999.738px 614.88px', x: '81%', y: '78%', icon: Time },
 ];
 
-
 export const SoftSkills = [
-  { name: 'Adaptabilidad', icon: Adaptability },
-  { name: 'Comunicación', icon: Comunication },
-  { name: 'Colaboración', icon: Colaboration },
-  { name: 'Resolución de Problemas', icon: Solve },
-  { name: 'Proactividad', icon: Proactivity },
-  { name: 'Gestión del Tiempo', icon: Time },
-  { name: 'Retroalimentación', icon: Feedback }
+  { name: 'Adaptabilidad', origin: '289.431px 138.72px', x: '12%', y: '19%', icon: Adaptability },
+  { name: 'Comunicación', origin: '928.966px 184.8px', x: '72%', y: '19%', icon: Comunication },
+  { name: 'Colaboración', origin: '219.772px 307.68px', x: '2%', y: '45%', icon: Colaboration },
+  { name: 'Resolución de Problemas', origin: '1041.91px 307.68px', x: '78%', y: '45%', icon: Solve },
+  { name: 'Proactividad', origin: '341.481px 576.48px', x: '1%', y: '78%', icon: Proactivity },
+  { name: 'Gestión del Tiempo', origin: '999.738px 614.88px', x: '81%', y: '78%', icon: Time },
 ];

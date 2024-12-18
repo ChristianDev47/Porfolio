@@ -1,10 +1,12 @@
 ---
-import "@fontsource-variable/onest"
+import "@fontsource-variable/inter"
   
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
 import { ViewTransitions } from "astro:transitions"
 import { getLangFromUrl } from '../i18n/utils';
+import SpotlightCursor from "@/components/Spotlight";
+
 
 const lang = getLangFromUrl(Astro.url);
 
@@ -14,6 +16,7 @@ interface Props {
 }
 
 const { description, title } = Astro.props
+
 ---
 
 <!doctype html>
@@ -28,19 +31,20 @@ const { description, title } = Astro.props
     <ViewTransitions />
   </head>
 
-  <body class="relative text-[#181818] dark:text-white min-h-screen h-full flex justify-between">
-    <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full dark:bg-[#14181c] bg-white "></div>
-    <Header />
-    <slot />
-    <Footer />
+  <body class="relative text-white min-h-screen h-full flex justify-between">
+    <SpotlightCursor/>
+    <div id="custom-cursor" class="pointer-events-none fixed inset-0 z-50 transition duration-300 lg:absolute w-[600px]"></div>
+    <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#000000] "></div>
+    <img alt="" fetchpriority="high" width="1760" height="980" decoding="async" data-nimg="1" class="pointer-events-none absolute left-1/2 top-0 min-w-[1760px] -translate-x-1/2 xl:min-w-[1588px] lg:top-[-22px] lg:min-w-[1420px] md:top-[46px] md:min-w-[1058px]" style="color:transparent" sizes="(max-width: 639px) 1058px"  src="/principal/bg.webp">
+      <Header />
+        <slot />
+      <Footer />
   
     <style is:global>
-      :root {
-        color-scheme: light dark;
-      }
   
       html {
-        font-family: "Onest Variable", system-ui, sans-serif;
+        font-family: "Inter", system-ui, sans-serif;
+        font-weight: 400;
         scroll-behavior: smooth;
       }
   
@@ -54,7 +58,7 @@ const { description, title } = Astro.props
         overflow-x: hidden;
       }
   
-      html.dark body {
+      html body {
         color: rgba(255, 255, 255, 0.9);
         background-color: #14181c; 
       }
@@ -63,6 +67,11 @@ const { description, title } = Astro.props
         html {
           scroll-behavior: auto;
         }
+      }
+
+      ::selection {
+        background-color: #4ade80;  /* Color de fondo cuando se selecciona */
+        color: rgb(52, 52, 52);               /* Color del texto cuando se selecciona */
       }
   
       #header-nav {
@@ -75,9 +84,31 @@ const { description, title } = Astro.props
         transition: text-shadow 0.3s ease;
       }
 
+      #custom-cursor {
+        pointer-events: none; /* Evita que interfiera con el mouse */
+        position: fixed; /* Posiciona de manera fija respecto a la ventana */
+        width: 150px;
+        height: 150px;
+        border-radius: 50%; /* Hace el cursor circular */
+        background: radial-gradient(circle, #4ade801b 5%, transparent 50%);
+        transform: translate(-50%, -50%); /* Centra el div respecto al cursor */
+        mix-blend-mode: normal; /* Asegúrate de que el modo de mezcla no lo oculte */
+        z-index: 100; /* Asegúrate de que esté por encima de otros elementos */
+      }
+
+
       .text__glowing:hover {
         text-shadow:
         1px 1px 20px #fff;
+      }
+
+      .border-linear {
+        border-width: 1px;
+        border-color: transparent;
+        -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
       }
   
       @keyframes blur {
@@ -94,7 +125,7 @@ const { description, title } = Astro.props
         }
       }
   
-      html.dark @keyframes blur {
+      html @keyframes blur {
         to {
           box-shadow: 0px 5px 50px -5px rgba(0, 0, 0, 0.1),
             0px 0px 0 1px rgba(0, 0, 0, 0.3);
@@ -114,6 +145,42 @@ const { description, title } = Astro.props
         }
       }
 
+      @font-face {
+        font-family: 'Eurostile';
+        src: url('/fonts/eurostile.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Europa Regular';
+        src: url('/fonts/Europa Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      .title {
+        font-family: 'Eurostile', sans-serif;
+      }
+
+      .image_container {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 8rem;
+        max-width: 9rem;
+        height: 8rem;
+        background:radial-gradient(circle closest-side,#20b556 98%,#0000);
+        border-radius: 0 0 50% 50%;
+        overflow:hidden;
+        text-align: center;
+      }
+
+
       ::-webkit-scrollbar {
         width: 12px;
       }
@@ -125,7 +192,99 @@ const { description, title } = Astro.props
       ::-webkit-scrollbar-thumb {
         background-color: #293136;
       }
+
+      @keyframes float {
+        0% {
+          box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+          transform: translatey(0px);
+        }
+        50% {
+          box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+          transform: translatey(-20px);
+        }
+        100% {
+          box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+          transform: translatey(0px);
+        }
+      }
+
+      .icon {
+        box-sizing: border-box;
+        overflow: hidden;
+        box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+        img { width: 100%; height: auto; }
+      }
+
+
+      code .line:after {
+        visibility: hidden;
+        overflow: hidden;
+        font-size: 1rem;
+        --tw-content: "'";
+        content: var(--tw-content);
+      }
+
+      .show-linenumbers pre code>.line:before {
+        counter-increment: line;
+        content: counter(line);
+        margin-right: 1.25rem;
+        display: inline-block;
+        width: 1rem;
+        font-size: 14px;
+        text-align: right;
+        color: rgb(121 125 134 / 1);
+      }
+
+      .show-linenumbers pre code {
+        counter-reset: line;
+      }
+
+      .homepage-shiki .show-linenumbers pre code>.line:before {
+        --tw-text-opacity: 1;
+        color: rgb(48 50 54 / var(--tw-text-opacity));
+      }
+
+      .homepage-shiki {
+        --shiki-color-text: #fff;
+        --shiki-color-background: transparent;
+        --shiki-token-constant: #c173d9;
+        --shiki-token-constant-val: #e5c07b;
+        --shiki-token-let: #c173d9;
+        --shiki-token-let-val: #e06c75;
+        --shiki-token-eq: #528bff;
+        --shiki-token-string: #98c379;
+        --shiki-token-foreach: #61afef;
+        --shiki-token-foreach-val: #9cdcfe;
+        --shiki-token-comment: #797d86;
+        --shiki-token-keyword: #afb1b6;
+        --shiki-token-timer: #56b6c2;
+        --shiki-token-param: #d19a66;
+        --shiki-token-function: #52c9e0;
+        --shiki-token-string-expression: #ecec79;
+        --shiki-token-simbol: #da70d6;
+        --shiki-token-simbol2: #179fff;
+        --shiki-token-simbol1: #ffd700;
+        --shiki-token-punctuation: #fff;
+        --shiki-token-link: #52c9e0;
+        --shiki-token-operator: #ba8c5e;
+        --shiki-token-embed: #fff;
+        --shiki-token-define-function: #c173d9;
+    }
+
     </style>
+    <script>
+    const cursor = document.getElementById('custom-cursor');
+
+    if(cursor){
+      document.addEventListener('mousemove', (event) => {
+        const { clientX, clientY } = event;
+
+        cursor.style.left = `${clientX}px`;
+        cursor.style.top = `${clientY}px`;
+      });
+    }
+    </script>
   </body>
-  
 </html>

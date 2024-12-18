@@ -11,24 +11,24 @@ const i18n = getI18N({ currentLocale })
 ---
 
 <footer
-  class="opacity-80 m-4  md:pl-0 mt-16 w-full mx-auto max-w-5xl md:mb-10 mb-20 flex justify-center px-8"
+  class="opacity-80 m-4  md:pl-0 mt-16 w-full mx-auto max-w-6xl md:mb-10 mb-20 flex justify-center px-8"
 >
   <div
     class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
   >
-    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
+    <span class="text-sm sm:text-center text-zinc-200/90"
       >© {currentYear}
-      <a href="https://midu.dev/" class="hover:underline">Christian Delgado</a>. {i18n.FOOTER.TITLE}
+      <a href="https://www.linkedin.com/in/christian-delgado-sanchez" target="_blank" class="hover:underline">Christian Delgado</a>. {i18n.FOOTER.TITLE}
     </span>
     <ul
-      class="flex flex-wrap items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+      class="flex flex-wrap items-center mt-3 text-sm font-medium text-white/90 sm:mt-0"
     >
       <li>
-        <a href="/#about-me" class="hover:underline me-4 md:me-6" href={translatePath('/#sobre-mí')}>
+        <a href="/#sobre-mí" class="hover:underline me-4 md:me-6" href={translatePath('/#sobre-mí')}>
           {t('nav.sobre-mí')}</a>
       </li>
       <li>
-        <a id="contacto" href="mailto:miduga@gmail.com" class="hover:underline" href={translatePath('/#contacto')}>
+        <a id="contacto" href="mailto:christiands.dev@gmail.com" class="hover:underline" href={translatePath('/#contacto')}>
           {t('nav.contacto')}
         </a>
       </li>

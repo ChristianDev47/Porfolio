@@ -8,20 +8,32 @@ const t = useTranslations(lang);
 const translatePath = useTranslatedPath(lang);
 ---
 
-<header class=" justify-center items-center md:hidden flex gap-5 mt-2 p-4 fixed bottom-4 left-0 right-0 max-w-[26.5rem] m-auto  rounded-xl z-[100] animate-fade-up animate-duration-[3000ms]">
-  <HeaderLink class="text__glowing" label="habilidades" href={translatePath('/#habilidades')}>
-    {t('nav.habilidades')}
-  </HeaderLink>
-  <HeaderLink class="text__glowing" label="proyectos" href={translatePath('/#proyectos')}>
-    {t('nav.proyectos')}
-  </HeaderLink>
-  <HeaderLink class="text__glowing" label="sobre-mí" href={translatePath('/#sobre-mí')}>
-    {t('nav.sobre-mí')}
-  </HeaderLink>
-  <HeaderLink class="text__glowing" label="contacto" href={translatePath('/#contacto')}>
-    {t('nav.contacto')}
-  </HeaderLink>
-</header>
+<div class=" lg:hidden w-full px-2 fixed bottom-4 left-0 right-0 m-auto z-[100] flex justify-center items-center animate-fade-up animate-duration-[3000ms]">
+  <header class="p-4 mt-2 flex gap-5 justify-center items-center flex-wrap rounded-xl max-w-[45.5rem]  ">
+    <HeaderLink class="text__glowing" label='sobre-mí' href={translatePath('/#sobre-mí')}>
+      {t('nav.sobre-mí')}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" label='educación' href={translatePath('/#educación')}>
+      {t('nav.educación')}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" label='habilidades' href={translatePath('/#habilidades')}>
+      {t('nav.habilidades')}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" label='proyectos' href={translatePath('/#proyectos')}>
+      {t('nav.proyectos')}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" label='experiencia' href={translatePath('/#experiencia')}>
+      {t('nav.experiencia')}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" label='certificaciones' href={translatePath('/#certificaciones')}>
+      {t('nav.certificaciones')}
+    </HeaderLink>
+    <HeaderLink class="text__glowing" label='contacto' href={translatePath('/#contacto')}>
+      {t('nav.contacto')}
+    </HeaderLink>
+  </header>
+</div>
+
 
 <script>
   document.addEventListener("astro:page-load", () => {
@@ -33,9 +45,9 @@ const translatePath = useTranslatedPath(lang);
         if (entry.isIntersecting) {
           navItems.forEach((item) => {
             if (item.getAttribute("aria-label")?.toString() === entry.target.id) {
-              item.classList.add("dark:text-white", "text-[#20b556]");
+              item.classList.add("text-white");
             } else {
-              item.classList.remove("dark:text-white", "text-[#20b556]");
+              item.classList.remove("text-white");
             }
           })
         }
@@ -71,15 +83,15 @@ const translatePath = useTranslatedPath(lang);
   }
 
   header {
-    @apply dark:bg-[#14181c]/90 bg-white/50;
+    @apply bg-[#14181c]/90;
   }
 
   @keyframes nav-shadown {
     0% {
-      @apply dark:bg-gray-800/0 bg-white/0;
+      @apply bg-gray-800/0 ;
     }
     to {
-      @apply shadow-lg ring-1 dark:backdrop-blur-md backdrop-blur-xl ring-white/10;
+      @apply shadow-lg ring-1 backdrop-blur-md ring-white/10;
     }
   }
 </style>

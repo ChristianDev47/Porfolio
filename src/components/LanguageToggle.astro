@@ -8,11 +8,11 @@ const translatePath = useTranslatedPath(lang);
 const route = getRouteFromUrl(Astro.url);
 ---
 
-<div class="relative ml-1 mr-1 flex justify-center items-center">
+<div class="relative mx-1 flex justify-center items-center">
   <button
     transition:persist
     id="language-toggle-btn"
-    class=" border-none flex items-center gap-2 transition text-neutral-600 hover:text-neutral-900 dark:text-gray-400 dark:hover:text-white"
+    class=" border-none flex items-center gap-2 transition text-white hover:text-[#0c8]"
   >
     <LanguageIcon
       class="language-toggle-icon size-[17px] transition-all"
@@ -21,13 +21,13 @@ const route = getRouteFromUrl(Astro.url);
   <div
     transition:persist
     id="languages-menu"
-    class="absolute hidden scale-80 top-8 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-white/90 dark:bg-gray-800/90 dark:border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
+    class="absolute hidden scale-80 top-5 right-0 text-sm p-1 min-w-[8rem] rounded-md border border-gray-100 bg-gray-800/90 border-gray-500/20 shadow-[0_3px_10px_rgb(0,0,0,0.2)] backdrop-blur-md"
   >
     <div>
       {
         Object.entries(LANGUAGES).map(([lang, label]) => (
-          <a  href={translatePath(`/${route ? route : ''}`, lang)}>
-          <div class="languages-menu-option px-2 py-1.5 cursor-pointer hover:bg-neutral-400/40 dark:hover:bg-gray-500/50 rounded-sm">
+          <a  href={translatePath(`/${route ? route : ''}`, lang)} data-astro-reload>
+          <div class="languages-menu-option px-2 py-1.5 cursor-pointer hover:bg-gray-500/50 rounded-sm">
              <p>{label.name}</p>
           </div>
           </a>

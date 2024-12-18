@@ -1,29 +1,29 @@
 {
-  "SEO_TITLE": "Christian Delgado's Porfolio",
-  "SEO_DESCRIPTION": "Hire the user to create amazing projects together. Full-Stack Developer",
+  "SEO_TITLE": "Portfolio of ",
+  "SEO_DESCRIPTION": "Hire Christian Delgado to create amazing projects together. Full-Stack Developer",
   "HERO": {
-    "INFO": "Hello, I am",
+    "INFO": "Hello, I'm",
     "NAME": "Christian Delgado",
-    "DESCRIPTION": "Graduated in Systems Engineering. Passionate about creating innovative applications by combining my skills in both front-end and back-end to deliver comprehensive and effective solutions, always with a focus on learning and continuous improvement.",
+    "DESCRIPTION": "Graduated in Systems Engineering with experience in designing, developing, and managing systems, databases, and web applications. I am passionate about creating innovative technological solutions, integrating creativity, efficiency, and best practices to generate scalable and high-performance projects.",
     "BTN_DOWNLOAD_CV": "Download CV",
-    "BTN_AVAILABLE_FOR_WORK": "Available for Work",
-    "SUB_1": "Enginner",
+    "BTN_AVAILABLE_FOR_WORK": "Available for work",
+    "SUB_1": "Systems Engineer",
     "SUB_2": "Programmer",
     "SUB_3": "And...",
-    "SUB_4": "Full-Stack Developer"
+    "SUB_4": "Full Stack Developer"
   },
   "SKILLS": {
     "SKILLS_INFO": {
       "TITLE": "My Skills",
-      "SUBTITLE": "Here are my technical and social skills, highlighting my experience in developing solutions and effective collaboration in the work environment.",
+      "SUBTITLE": "Here are my technical and interpersonal skills, highlighting my experience in developing solutions and effective collaboration in the workplace.",
       "OTHERS": "Others",
-      "SOFT_SKILLS": "Social Skills"
+      "SOFT_SKILLS": "Interpersonal Skills"
     }
   },
   "PROJECTS": {
     "TITLE": "Featured Projects",
-    "SUBTITLE": "Here are some of my projects that you shouldn't miss.",
-    "INFO": "More Details",
+    "SUBTITLE": "Explore some of my most relevant projects that reflect my skills and experience.",
+    "INFO": "More details",
     "BTN_CODE": "Code",
     "BTN_PREVIEW": "Preview"
   },
@@ -32,38 +32,13 @@
     "CONTENT": {
       "TEXT": [
         {
-          "PARAGRAPH": "My name is Christian Delgado. I started in the world of programming when I was young, starting my journey with an old computer I had in my room. The curiosity about the systems and pages around me led me to study Systems Engineering later on, where I developed the ability to solve problems and create innovative solutions."
+          "PARAGRAPH": "My name is Christian Delgado. I started in the world of programming when I was young, beginning my journey with an old computer I had in my room. Curiosity about the systems and websites around me led me to study Systems Engineering, where I developed the ability to solve problems and create innovative solutions."
         },
         {
-          "PARAGRAPH": "During my professional internship, my technical and professional skills were reinforced, learning to work not only as a team but also under pressure, preparing me to face challenges and obstacles that come my way."
+          "PARAGRAPH": "During my professional internships, my technical and professional skills were strengthened, learning to work not only in teams but also under pressure, preparing me to face the challenges and obstacles that may come my way."
         },
         {
-          "PARAGRAPH": "Today, I continue with the same passion for learning and constantly evolving. My goal is to leave a mark on the world of programming, as well as in every project I participate in, bringing not only my knowledge and skills, but also my principles and values, such as responsibility and dedication to doing what I love most, which is development and programming."
-        }
-      ]
-    },
-    "EDUCATION": {
-      "TITLE": "Education and Experience",
-      "CONTENT": [
-        {
-          "DATE": "Currently...",
-          "TITLE": "Seeking Improvement and New Opportunities",
-          "SUBTITLE": "I am currently focused on continuing to improve, with a particular interest in finding job opportunities.",
-          "DESCRIPTION": "Since graduating from university, I have dedicated my time to learning and mastering new technologies. Throughout my university career, I acquired a solid foundation, and later, I complemented those skills with the learning of more advanced tools and technologies. This has allowed me to expand my experience and skills in web development and programming, driving me to continue growing day by day."
-        },
-        {
-          "DATE": "March 2023 - August 2023",
-          "LINK": "https://itdstarija.edu.bo/",
-          "TITLE": "Professional Internship",
-          "SUBTITLE": "I completed my professional internship at the Instituto Técnico Domingo Savio (ITDS) in Tarija for a period of six months.",
-          "DESCRIPTION": "During my professional internship at the Instituto Tecnológico Domingo Savio (ITDS), I played an active role in the administration of systems and databases, as well as in the management of the institution's web pages. I proposed and implemented important improvements in the information systems, optimizing their efficiency and functionality. I also successfully managed the complete migration of the database to a new system, ensuring a smooth and uninterrupted transition of all institutional records. This experience allowed me to apply and consolidate my knowledge in a professional environment, strengthening my skills to manage technology projects in a comprehensive and effective manner."
-        },
-        {
-          "DATE": "2019 - June 2024",
-          "LINK": "https://www.upds.edu.bo/sede/tarija/",
-          "TITLE": "University Studies",
-          "SUBTITLE": "I studied at Universidad Privada Domingo Savio (UPDS) in Tarija, majoring in Systems Engineering.",
-          "DESCRIPTION": "I completed my professional studies at Universidad Privada Domingo Savio (UPDS), during which I received various academic recognitions. I was awarded as the best student in my major four times in a row, and received a special recognition as the third-best student in the entire faculty. Upon graduating, I was awarded a medal for excellence for my outstanding academic performance."
+          "PARAGRAPH": "Today, I continue with the same passion for learning and constantly evolving. My goal is to leave a mark in the programming world, as well as in every project I participate in, contributing not only my knowledge and skills but also my principles and values, such as responsibility and dedication to doing what I love most, which is development and programming."
         }
       ]
     }
@@ -72,15 +47,72 @@
     "TITLE": "Contact",
     "SUBTITLE": "Let's be amazing",
     "SUBTITLE2": "Together!",
-    "PARAGRAPH": "As a developer, my passion for programming and my motivation to face new challenges drive me to grow constantly. I am currently seeking job opportunities where I can apply and expand my skills both personally and professionally. If you are looking for someone with dedication, responsibility, and passion for what they do,",
-    "CONTACT": "don't hesitate to contact me!",
-    "BTN_CONTACT": "Get in Touch!"
+    "PARAGRAPH": "As a developer, my passion for programming and my motivation to face new challenges drive me to grow constantly. I am currently looking for job opportunities where I can apply and expand my skills both personally and professionally. If you're looking for someone with dedication, responsibility, and passion for what they do,",
+    "CONTACT": "don’t hesitate to contact me!",
+    "BTN_CONTACT": "Get in touch!"
+  },
+  "EDUCATION": {
+    "TITLE": "Education and Recognitions",
+    "SUBTITLE": "Here are my academic background and the achievements I have earned throughout my educational journey.",
+    "DATE": "2019 - 2024",
+    "LINK": "https://www.upds.edu.bo/sede/tarija/",
+    "EDU_TITLE": "Universidad Privada Domingo Savio",
+    "CARRER": "Systems Engineering",
+    "DESCRIPTION_1": "I completed my Systems Engineering studies at Universidad Privada Domingo Savio in June 2024, where I gained a solid foundation in software development.",
+    "DESCRIPTION_2": "This education has prepared me to adapt and contribute efficiently to technological projects.",
+    "RECOGNITIONS_TITLE": "Academic Recognitions",
+    "FACULT": "Faculty of Engineering",
+    "RECOGNITIONS": [
+      "Recognized as the Best Student of the Career in 2021, 2022, and 2023.",
+      "Honor Roll and awarded Third Best Student of the Faculty of Engineering in 2023.",
+      "Academic Excellence Medal awarded upon completion of my studies in 2024, in recognition of my outstanding academic performance throughout the degree."
+    ],
+    "LINK_MESSAGE": "Learn more"
+  },
+  "EXPERIENCE": {
+    "TITLE": "Experience"
+  },
+  "CERTIFICATION": {
+    "TITLE": "Certifications",
+    "SUBTITLE": "Here are some of my recently obtained certifications",
+    "CERTIFICATIONS": [
+      {
+        "TITLE": "AWS Cloud Practitioner Certification Course",
+        "EMIT": "Platzi",
+        "CERT": "/certifications/aws-cert.webp",
+        "LINK": "https://platzi.com/p/christiands.dev/curso/9574-django/diploma/detalle/"
+      },
+      {
+        "TITLE": "Django Course",
+        "EMIT": "Platzi",
+        "CERT": "/certifications/django-cert.webp",
+        "LINK": "https://platzi.com/p/christiands.dev/curso/9574-django/diploma/detalle/"
+      },
+      {
+        "TITLE": "Docker Course",
+        "EMIT": "Platzi",
+        "CERT": "/certifications/docker-cert.webp",
+        "LINK": "https://platzi.com/p/christiands.dev/curso/9574-django/diploma/detalle/"
+      },
+      {
+        "TITLE": "Git and GitHub Course",
+        "EMIT": "Platzi",
+        "CERT": "/certifications/git-cert.webp",
+        "LINK": "https://platzi.com/p/christiands.dev/curso/9574-django/diploma/detalle/"
+      },
+      {
+        "TITLE": "Advanced React Course",
+        "EMIT": "Platzi",
+        "CERT": "/certifications/react-cert.webp",
+        "LINK": "https://platzi.com/p/christiands.dev/curso/9574-django/diploma/detalle/"
+      }
+    ]
   },
   "FOOTER": {
-    "TITLE": "Almost all rights reserved"
+    "TITLE": "All rights reserved"
   },
   "ERROR_404": {
-    "TITLE": "Page Not Found",
-    "BACK_HOMEPAGE_BTN": "Back to Homepage"
+    "TITLE": "Page not found",
+    "BACK_HOMEPAGE_BTN": "Go back to homepage"
   }
 }

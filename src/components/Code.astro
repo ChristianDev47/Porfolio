@@ -1,0 +1,43 @@
+---
+import ButtonCopy from "./ButtonCopy.astro";
+---
+
+<div class="relative z-10 bg-white bg-opacity-[0.03] p-[1rem] backdrop-blur-[4px] rounded-xl max-w-[43rem] h-[26rem] w-full md:mt-5 ">
+  <div class="absolute inset-0 z-10 rounded-[inherit] border border-white/[0.04]" aria-hidden="true"></div>
+  <div class="absolute inset-[5px] z-10 rounded-[10px] border border-white/[0.04] mix-blend-overlay" aria-hidden="true"></div>
+  <div class="pointer-events-none absolute -left-40 -top-44 z-0 h-[482px] w-[470px] rounded-[100%] bg-[linear-gradient(180deg,rgba(25,27,52,0)_0%,#16182D_88.36%)] opacity-65 blur-3xl xl:-left-36 xl:-top-40 xl:h-[427px] xl:w-[417]"></div>
+  <div class="pointer-events-none absolute -right-32 -top-28 z-0 h-[316px] w-[316px] rounded-[100%] bg-[#16182D] opacity-30 blur-3xl"></div>
+  <div class="pointer-events-none absolute -bottom-36 -right-36 z-0 h-[377px] w-[377px] rounded-[100%] bg-[#16182D] opacity-40 blur-3xl"></div>
+  <div class="relative z-20 rounded-[10px] bg-black-new xl:rounded-lg">
+    <div class="rounded-[10px] bg-black-new">
+      <div class="border-b border-white/[0.03]">
+        <div class="relative z-20 flex h-8 gap-x-3.5 rounded-[10px] border-opacity-[0.05] bg-black-new pl-[18px] pt-1 tracking-extra-tight xl:rounded-lg xl:pl-4  lg:gap-x-3  md:gap-x-2.5 md:pl-[14px] "><span class="absolute left-0 top-1/2 h-[450px] w-px -translate-y-1/2"></span><span class="relative mt-1 h-1.5 w-1.5 shrink-0 rounded-full transition-[background-color,box-shadow] duration-200 xl:h-[5px] xl:w-[5px] bg-primary-1 shadow-[0px_0px_9px_0px_#4BFFC3]" aria-hidden="true"><span class="absolute left-1/2 top-1/2 h-1 w-1 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#D9FDF1] opacity-70 blur-[1px]"></span></span><span class="line-clamp-1 h-[14px] font-mono text-[13px] leading-none transition-colors duration-200 md:h-3 md:text-[11px] text-white"><span class="text-white text-[15px]">Motivation.js</span><span></span></span></div>
+      </div>
+      <div class="h-[410px] ">
+        <div class="homepage-shiki" style="opacity:1">
+          <figure class="code-block show-linenumbers group relative flex [&amp;_pre]:min-w-full show-linenumbers highlighted-code h-[410px] overflow-auto  [&amp;_[data-line]]:px-3 [&amp;_[data-line]]:text-xs [&amp;_[data-line]]:leading-[1.21] lg:[&amp;_[data-line]]:text-[11px] lg:[&amp;_[data-line]]:leading-[1.09] [&amp;_pre]:pt-3 [&amp;_pre_code>.line::before]:mr-7">
+            <pre class="shiki css-variables text-[15px]" tabindex="0" data-language="javascript">
+              <code class="grid">
+                <span class="line" data-line="1"><span style="color:var(--shiki-token-define-function)">export</span><span style="color:var(--shiki-token-define-function)"> async</span><span style="color:var(--shiki-token-define-function)"> function</span><span style="color:var(--shiki-token-function)"> dailyMotivation</span><span style="color:var(--shiki-token-simbol1)">() </span><span style="color:var(--shiki-token-simbol1)">{'{'}</span></span>
+                <span class="line" data-line="2"><span style="color:var(--shiki-token-constant)">    const</span><span style="color:var(--shiki-token-constant-val)"> tasks</span><span><span style="color:var(--shiki-token-eq)"> = </span><span style="color:var(--shiki-token-simbol)">[</span><span style="color:var(--shiki-token-string)">"Code", "Improve", "Learn", "Grow"</span><span style="color:var(--shiki-token-simbol)">]</span>;</span></span>
+                <span class="line" data-line="3"><span  style="color:var(--shiki-token-let)">    let</span><span style="color:var(--shiki-token-let-val)"> energy</span><span style="color:var(--shiki-token-eq)"> = </span><span style="color:var(--shiki-token-param)">100</span>;</span>
+                <span class="line" data-line="4"><span style="color:var(--shiki-token-let-val)">    tasks</span><span style="color:var(--shiki-token-function)">.forEach</span><span style="color:var(--shiki-token-simbol)">(<span style="color:var(--shiki-token-simbol2)"> (<span style="color:var(--shiki-token-foreach-val)">task</span>, <span style="color:var(--shiki-token-foreach-val)">idk</span><span style="color:var(--shiki-token-simbol2)">)</span></span><span> =&gt;</span><span> {'{'}</span></span></span>
+                <span class="line" data-line="5"><span style="color:var(--shiki-token-timer)">        setTimeout</span><span style="color:var(--shiki-token-simbol1)">(</span><span style="color:var(--shiki-token-simbol)"> () =&gt;</span><span style="color:var(--shiki-token-simbol)"> {'{'}</span></span></span>
+                <span class="line" data-line="6"><span style="color:var(--shiki-token-constant-val)">            console.<span style="color:var(--shiki-token-foreach)">log</span></span><span style="color:var(--shiki-token-simbol2)">(</span><span style="color:var(--shiki-token-let-val)"> energy <span style="color:var(--shiki-token-eq)">&gt; </span><span style="color:var(--shiki-token-param)">0</span></span><span style="color:var(--shiki-token-simbol)"> ?</span> <span style="color:var(--shiki-token-string)">`</span><span style="color:var(--shiki-token-simbol)">{`$`}</span><span style="color:var(--shiki-token-string)"><span style="color:var(--shiki-token-simbol1)">{'{'}</span><span style="color:var(--shiki-token-let-val)">idk </span><span style="color:var(--shiki-token-eq)">+</span> <span style="color:var(--shiki-token-param)">1</span><span style="color:var(--shiki-token-simbol1)">{'}'}</span><span style="color:var(--shiki-token-string)">:</span> <span style="color:var(--shiki-token-simbol)">$</span><span style="color:var(--shiki-token-simbol1)">{'{'}</span><span style="color:var(--shiki-token-let-val)">task</span><span style="color:var(--shiki-token-simbol1)">{'}'}</span>! Keep going!`</span></span>
+                <span class="line" data-line="7"><span style="color:var(--shiki-token-simbol)">            : </span><span style="color:var(--shiki-token-string)">"⚠️ Struggling? Take a breath, remember why you started!"</span><span style="color:var(--shiki-token-simbol2)">)</span>;</span>
+                <span class="line" data-line="8"><span style="color:var(--shiki-token-let-val)">            energy <span style="color:var(--shiki-token-simbol)">-=</span> <span style="color:var(--shiki-token-param)">25</span></span>;</span>
+                <span class="line" data-line="9"><span>        <span style="color:var(--shiki-token-simbol)">{'}'}</span>, <span style="color:var(--shiki-token-let-val)">idk</span> <span style="color:var(--shiki-token-timer)">*</span> <span style="color:var(--shiki-token-param)">3000</span><span style="color:var(--shiki-token-simbol1)">)</span>;</span></span>
+                <span class="line" data-line="10"><span>    <span style="color:var(--shiki-token-simbol2)">{'}'}</span><span style="color:var(--shiki-token-simbol)">)</span>;</span></span>
+                <span class="line" data-line="11"><span style="color:var(--shiki-token-timer)">    setTimeout</span><span style="color:var(--shiki-token-simbol)">(</span><span> <span style="color:var(--shiki-token-simbol2)">()</span><span style="color:var(--shiki-token-simbol)"> =&gt;</span></span><span> <span style="color:var(--shiki-token-simbol2)">{'{'}</span></span></span>
+                <span class="line" data-line="12"><span style="color:var(--shiki-token-constant-val)">            console.<span style="color:var(--shiki-token-foreach)">log</span></span><span style="color:var(--shiki-token-simbol1)">(</span><span style="color:var(--shiki-token-string)">"✨ Keep pushing, greatness awaits! 🚀"</span><span style="color:var(--shiki-token-simbol1)">);</span></span>
+                <span class="line" data-line="13"><span>    <span style="color:var(--shiki-token-simbol2)">{'}'}</span>, <span style="color:var(--shiki-token-let-val)">tasks</span>.<span style="color:var(--shiki-token-let-val)">let</span> <span style="color:var(--shiki-token-timer)">*</span> <span style="color:var(--shiki-token-param)">3000</span><span style="color:var(--shiki-token-simbol)">)</span>;</span></span>
+                <span class="line" data-line="14"><span><span style="color:var(--shiki-token-simbol1)">{'}'}</span></span></span>
+              </code>
+            </pre>
+            <ButtonCopy/>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
