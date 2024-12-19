@@ -36,14 +36,29 @@ const { description, title } = Astro.props
       <Footer />
   
     <style is:global>
+      @font-face {
+        font-family: 'Eurostile';
+        src: url('/fonts/eurostile.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
+
+      @font-face {
+        font-family: 'Europa Regular';
+        src: url('/fonts/Europa Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+      }
   
       html {
-        font-family: "Inter", system-ui, sans-serif;
-        font-weight: 400;
         scroll-behavior: smooth;
       }
   
-      body {
+      body {        
+        font-family: "Inter", system-ui, sans-serif;
+        font-weight: 400;
         color: rgba(17, 17, 17, 0.9);
         display: flex;
         flex-direction: column;
@@ -56,6 +71,10 @@ const { description, title } = Astro.props
       html body {
         color: rgba(255, 255, 255, 0.9);
         background-color: #14181c; 
+      }
+
+      .title {
+        font-family: 'Eurostile', sans-serif;
       }
   
       @media (prefers-reduced-motion: reduce) {
@@ -159,26 +178,6 @@ const { description, title } = Astro.props
           background-color: rgba(0, 0, 0, 0.3);
           border-radius: 9999px;
         }
-      }
-
-      @font-face {
-        font-family: 'Eurostile';
-        src: url('/fonts/eurostile.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      @font-face {
-        font-family: 'Europa Regular';
-        src: url('/fonts/Europa Regular.woff') format('woff');
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-      }
-
-      .title {
-        font-family: 'Eurostile', sans-serif;
       }
 
       .image_container {
