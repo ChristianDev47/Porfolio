@@ -16,7 +16,7 @@ const CV = Astro.currentLocale === 'es' ? '/cv/CV_Christian_Delgado_FullStackDev
   <div class="flex flex-col justify-start items-center w-full relative z-10 ">
     <div class="flex flex-col gap-[1rem]  justify-center lg:w-full lg:max-w-full max-w-lg text-center">
       <div class=" text-center font-bold leading-[3.2rem] title">
-        <h5 class="text-[2.5rem] title ">{i18n.HERO.INFO} {i18n.HERO.NAME}</h5>
+        <h5 class="text-[2.5rem] title titleFont">{i18n.HERO.INFO} {i18n.HERO.NAME}</h5>
         <p class="sm:text-[3rem] text-[2rem] leading-[3rem] text-[#4ade80] space-before"  id="ChangeTitle" data-sub1={i18n.HERO.SUB_1} data-sub2={i18n.HERO.SUB_2} data-sub3={i18n.HERO.SUB_3} data-sub4={i18n.HERO.SUB_4}>{(" ")}</p>
       </div>
     <div class="w-full flex justify-center">
@@ -53,6 +53,9 @@ const CV = Astro.currentLocale === 'es' ? '/cv/CV_Christian_Delgado_FullStackDev
   .space-before::before {
     content: "\00A0"; 
   }
+  .titleFont {
+    font-family: 'Eurostile', sans-serif;
+  }
 </style>
 
 <script>
@@ -60,6 +63,9 @@ import TypeIt from "typeit";
 
   function init() {
     const titleElement = document.getElementById("ChangeTitle");
+    const title = document.querySelector("h5");
+    title?.classList.add("titleFont")
+
     if(titleElement){
       const sub1 = titleElement?.getAttribute("data-sub1");
       const sub2 = titleElement?.getAttribute("data-sub2");
