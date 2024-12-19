@@ -62,27 +62,26 @@ import TypeIt from "typeit";
     const titleElement = document.getElementById("ChangeTitle");
     if(titleElement){
       const sub1 = titleElement?.getAttribute("data-sub1");
-      titleElement.innerText = sub1 ?? ''
       const sub2 = titleElement?.getAttribute("data-sub2");
       const sub3 = titleElement?.getAttribute("data-sub3");
       const sub4 = titleElement?.getAttribute("data-sub4");
       new TypeIt("#ChangeTitle", {
-        speed: 110,
+        speed: 80,
         waitUntilVisible: true,
         cursor: true,
         cursorChar: ''
-
       })
-      .pause(1000)
+      .type(sub1 ?? '')
+      .pause(500)
       .delete(22)
-      .type(sub2 ?? '', { delay: 500 })
-      .pause(800)
+      .type(sub2 ?? '')
+      .pause(500)
       .delete(14)
       .type(sub3 ?? '')
-      .pause(800)
+      .pause(500)
       .delete(6)
       .type(sub4 ?? '')
-      .pause(300)
+      .pause(500)
       .delete(0)
       .options({cursorChar: '', cursor: false})
       .go();

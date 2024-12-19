@@ -22,11 +22,12 @@ const isActive = currentPath === href && checkActive
 <a
   href={href}
   data-astro-reload 
+  data-astro-history="auto"
   aria-label={label}
   class:list={[
     className,
     "transition duration-200 z-[100] hover:text-[#0c8] text-white leading-[21px]",
-    isActive ? "text-white" : "text-white ",
+    isActive ? "text-[#4ade80]" : "text-white ",
   ]}
   {...restOfProps}
 >

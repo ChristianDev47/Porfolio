@@ -3,11 +3,7 @@ import "@fontsource-variable/inter"
   
 import Header from "../components/Header.astro"
 import Footer from "../components/Footer.astro"
-import { ViewTransitions } from "astro:transitions"
 import { getLangFromUrl } from '../i18n/utils';
-import SpotlightCursor from "@/components/Spotlight";
-
-
 const lang = getLangFromUrl(Astro.url);
 
 interface Props {
@@ -28,12 +24,11 @@ const { description, title } = Astro.props
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
   </head>
 
   <body class="relative text-white min-h-screen h-full flex justify-between">
-    <SpotlightCursor/>
-    <div id="custom-cursor" class="pointer-events-none fixed inset-0 z-50 transition duration-300 lg:absolute w-[600px]"></div>
+    <div id="flashlight" class="invisible dark:visible"></div>
+    <div id="custom-cursor" class="dark:hidden pointer-events-none fixed inset-0 z-50 transition duration-300 lg:absolute w-[600px]"></div>
     <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#000000] "></div>
     <img alt="" fetchpriority="high" width="1760" height="980" decoding="async" data-nimg="1" class="pointer-events-none absolute left-1/2 top-0 min-w-[1760px] -translate-x-1/2 xl:min-w-[1588px] lg:top-[-22px] lg:min-w-[1420px] md:top-[46px] md:min-w-[1058px]" style="color:transparent" sizes="(max-width: 639px) 1058px"  src="/principal/bg.webp">
       <Header />
@@ -70,8 +65,8 @@ const { description, title } = Astro.props
       }
 
       ::selection {
-        background-color: #4ade80;  /* Color de fondo cuando se selecciona */
-        color: rgb(52, 52, 52);               /* Color del texto cuando se selecciona */
+        background-color: #4ade80;  
+        color: rgb(52, 52, 52);            
       }
   
       #header-nav {
@@ -85,15 +80,36 @@ const { description, title } = Astro.props
       }
 
       #custom-cursor {
-        pointer-events: none; /* Evita que interfiera con el mouse */
-        position: fixed; /* Posiciona de manera fija respecto a la ventana */
-        width: 150px;
-        height: 150px;
-        border-radius: 50%; /* Hace el cursor circular */
+        pointer-events: none; 
+        position: fixed; 
+        width: 400px;
+        height: 400px;
+        z-index: 9999;
+        border-radius: 50%; 
         background: radial-gradient(circle, #4ade801b 5%, transparent 50%);
-        transform: translate(-50%, -50%); /* Centra el div respecto al cursor */
-        mix-blend-mode: normal; /* Asegúrate de que el modo de mezcla no lo oculte */
-        z-index: 100; /* Asegúrate de que esté por encima de otros elementos */
+        transform: translate(-50%, -50%); 
+        mix-blend-mode: normal; 
+        z-index: 100; 
+      }
+
+      #flashlight {
+        --Xpos: 50vw;
+        --Ypos: 50vh;
+      }
+      
+      #flashlight:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+        z-index: 99999;
+        background: radial-gradient(
+          circle 14rem at var(--Xpos) var(--Ypos),
+          rgba(0, 0, 0, 0),
+          rgba(0, 0, 0, 0.928)
+        );
       }
 
 
@@ -275,16 +291,50 @@ const { description, title } = Astro.props
 
     </style>
     <script>
-    const cursor = document.getElementById('custom-cursor');
+      const cursor = document.getElementById('custom-cursor');
 
-    if(cursor){
-      document.addEventListener('mousemove', (event) => {
-        const { clientX, clientY } = event;
+      if(cursor){
+        document.addEventListener('mousemove', (event) => {
+          const { clientX, clientY } = event;
 
-        cursor.style.left = `${clientX}px`;
-        cursor.style.top = `${clientY}px`;
-      });
-    }
+          cursor.style.left = `${clientX}px`;
+          cursor.style.top = `${clientY}px`;
+        });
+      }
     </script>
+    <script>
+      let mouseX: number = 0;
+      let mouseY: number = 0;
+
+      const flashlight = document.getElementById("flashlight") as HTMLElement;
+
+      const isTouchDevice = (): boolean => {
+        try {
+          document.createEvent("TouchEvent");
+          return true;
+        } catch (e) {
+          return false;
+        }
+      };
+
+      function getMousePosition(e: MouseEvent | TouchEvent): void {
+        if (!flashlight) return;
+
+        if (e instanceof MouseEvent) {
+          mouseX = e.pageX;
+          mouseY = e.pageY;
+        } else if (e instanceof TouchEvent && e.touches[0]) {
+          mouseX = e.touches[0].pageX;
+          mouseY = e.touches[0].pageY;
+        }
+
+        flashlight.style.setProperty("--Xpos", `${mouseX}px`);
+        flashlight.style.setProperty("--Ypos", `${mouseY}px`);
+      }
+
+      document.addEventListener("mousemove", getMousePosition);
+      document.addEventListener("touchmove", getMousePosition);
+    </script>
+    
   </body>
 </html>

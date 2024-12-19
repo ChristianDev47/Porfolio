@@ -55,7 +55,7 @@ const SoftSkills_data =
             xmlns="http://www.w3.org/2000/svg">
             {SoftSkills_data.map((Skill) => (
                <g class="movetext relative mix-blend-hard-light transition-transform duration-200" style={`transform: none; transform-origin: ${Skill.origin};`}>
-              <text class="sm:text-xl text-5xl font-medium uppercase skill-text size-6" x={Skill.x} y={Skill.y} fill="currentColor">{Skill.name}</text>
+              <text class="font-medium uppercase skill-text size-6" x={Skill.x} y={Skill.y} fill="currentColor">{Skill.name}</text>
             </g>
             ))}
           </svg>
