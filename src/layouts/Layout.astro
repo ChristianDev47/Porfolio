@@ -51,7 +51,11 @@ const { description, title } = Astro.props
         font-style: normal;
         font-display: swap;
       }
-  
+      
+      h5 {
+        font-family: 'Eurostile', sans-serif;
+      }
+      
       html {
         scroll-behavior: smooth;
       }
@@ -72,11 +76,9 @@ const { description, title } = Astro.props
         color: rgba(255, 255, 255, 0.9);
         background-color: #14181c; 
       }
+      
 
-      .title {
-        font-family: 'Eurostile', sans-serif;
-      }
-  
+      
       @media (prefers-reduced-motion: reduce) {
         html {
           scroll-behavior: auto;
@@ -131,6 +133,9 @@ const { description, title } = Astro.props
         );
       }
 
+      .title {
+        font-family: 'Eurostile', sans-serif;
+      }
 
       .text__glowing:hover {
         text-shadow:
