@@ -67,6 +67,10 @@ const { description, title } = Astro.props
         transition: background-color 0.3s ease, color 0.3s ease;
         overflow-x: hidden;
       }
+
+      .title {
+        font-family: 'Eurostile', sans-serif !important;
+      }
   
       html body {
         color: rgba(255, 255, 255, 0.9);
@@ -129,9 +133,6 @@ const { description, title } = Astro.props
         );
       }
 
-      .title {
-        font-family: 'Eurostile', sans-serif;
-      }
 
       .text__glowing:hover {
         text-shadow:
