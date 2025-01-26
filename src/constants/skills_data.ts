@@ -36,6 +36,8 @@ import Comunication from '@/icons/Comunication.astro';
 import Colaboration from '@/icons/Colaboration.astro';
 import Time from '@/icons/Time.astro';
 import Proactivity from '@/icons/Proactivity.astro';
+import GoogleCloud from '@/icons/GoogleCloud.astro';
+import Stripe from '@/icons/Stripe.astro';
 
 
 export const TechnicalSkills = {
@@ -65,6 +67,7 @@ export const TechnicalSkills = {
   ],
   Others: [
     { name: 'AWS', icon: AWS },
+    { name: 'GoogleCloud', icon: GoogleCloud },
     { name: 'Git', icon: Git },
     { name: 'GitHub', icon: GitHub },
     { name: 'Jenkins', icon: Jenkins },
@@ -73,6 +76,7 @@ export const TechnicalSkills = {
     { name: 'Postman', icon: Postman },
     { name: 'Cloudinary', icon: Cloudinary },
     { name: 'Cloudflare', icon: Cloudflare },
+    { name: 'Stripe', icon: Stripe },
     { name: 'Vercel', icon: Vercel },
     { name: 'Jest', icon: Jest },
     { name: 'Azure', icon: Azure }

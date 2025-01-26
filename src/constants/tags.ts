@@ -28,8 +28,15 @@ import Vite from '../icons/Vite.astro';
 import Vsc from '../icons/Vsc.astro';
 import Azure from '../icons/Azure.astro';
 import Cloudflare from '../icons/Cloudflare.astro';
+import GoogleCloud from '@/icons/GoogleCloud.astro';
+import Stripe from '@/icons/Stripe.astro';
+import AWS from '@/icons/AWS.astro';
 
 export const TAGS = {
+  AWS: {
+    name: 'AWS',
+    icon: AWS,
+  },
   NEXT: {
     name: 'Next.js',
     icon: NextJS,
@@ -150,5 +157,13 @@ export const TAGS = {
     name: 'Github',
     icon: GitHub,
   },
+  GOOGLECLOUD: {
+    name: 'Google Cloud',
+    icon: GoogleCloud
+  },
+  STRIPE: {
+    name: 'Stripe',
+    icon: Stripe
+  }
 };
 

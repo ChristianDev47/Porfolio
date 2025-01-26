@@ -2,6 +2,14 @@ import { TAGS } from "./tags";
 
 export const EXPERIENCE = [
   {
+    title: "Full Stack Developer Freelance",
+    link: "https://www.linkedin.com/in/christian-delgado-sanchez",
+    date: "December 2024 - January 2025",
+    location: "San Francisco, California, United States · Remote",
+    description: "As a Freelance Full Stack Developer, I worked on the design and development of the Pitchfy platform for a client in the U.S., using technologies such as React, Node.js, Express, and MongoDB. My involvement ranged from creating a modern and intuitive interface to implementing advanced features like an intelligent chatbot to enhance user interaction. Additionally, I integrated a Google login system using Google Cloud, a secure payment system with Stripe, and deployed the backend on an AWS EC2 server, ensuring scalability and high performance. I also managed the final deployment of the website using a GoDaddy domain and AWS Route 53. During the process, I optimized the platform's SEO, resulting in increased visibility on search engines, and improved the page's performance by 50%, significantly reducing load times and enhancing the user experience.",
+    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.GOOGLECLOUD, TAGS.AWS, TAGS.STRIPE, TAGS.MONGODB, TAGS.GITHUB, TAGS.FIGMA, TAGS.JEST],
+  },
+  {
     title: "Intern as Full Stack Developer",
     link: "https://itdstarija.edu.bo/",
     date: "March 2023 – August 2023",

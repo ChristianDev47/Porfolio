@@ -2,6 +2,14 @@ import { TAGS } from "./tags";
 
 export const EXPERIENCE = [
   {
+    title: "Desarrollador Full Stack Freelance",
+    link: "https://www.linkedin.com/in/christian-delgado-sanchez",
+    date: "Diciembre 2024 - Enero 2025",
+    location: "San Francisco, California, Estados Unidos · En remoto",
+    description: "Como Desarrollador Full Stack Freelance, trabajé en el diseño y desarrollo de la plataforma Pitchfy para un cliente en EE.UU., utilizando tecnologías como React, Node.js, Express, y MongoDB. Mi participación abarcó desde la creación de una interfaz moderna e intuitiva, hasta la implementación de funcionalidades avanzadas como un chatbot inteligente para mejorar la interacción con los usuarios. Además, integré un sistema de inicio de sesión con Google mediante Google Cloud, un sistema de pagos seguros con Stripe, y desplegué el backend en un servidor AWS EC2, lo que permitió asegurar escalabilidad y alto rendimiento. También gestioné el despliegue final de la página utilizando un dominio de GoDaddy y AWS Route 53. Durante el proceso, optimicé el SEO de la plataforma, lo que resultó en una mayor visibilidad en los motores de búsqueda, y mejoré el rendimiento de la página en un 50%, reduciendo significativamente los tiempos de carga y mejorando la experiencia del usuario.",
+    tags: [TAGS.REACT, TAGS.NODEJS, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.GOOGLECLOUD, TAGS.AWS, TAGS.STRIPE, TAGS.MONGODB, TAGS.GITHUB, TAGS.FIGMA, TAGS.JEST],
+  },
+  {
     title: "Practicante como Desarrollador Full Stack",
     link: "https://itdstarija.edu.bo/",
     date: "Marzo 2023 – Agosto 2023",
