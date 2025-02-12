@@ -38,6 +38,9 @@ import Time from '@/icons/Time.astro';
 import Proactivity from '@/icons/Proactivity.astro';
 import GoogleCloud from '@/icons/GoogleCloud.astro';
 import Stripe from '@/icons/Stripe.astro';
+import Java from '@/icons/Java.astro';
+import SpringBoot from '@/icons/SpringBoot.astro';
+import Actions from '@/icons/Actions.astro';
 
 
 export const TechnicalSkills = {
@@ -54,32 +57,35 @@ export const TechnicalSkills = {
     { name: 'Figma', icon: Figma }
   ],
   Backend: [
+    { name: 'Java', icon: Java },
+    { name: 'Spring Boot', icon: SpringBoot },
     { name: 'Node.js', icon: NodeJS },
     { name: 'Express', icon: Express },
     { name: 'Django', icon: Django },
     { name: 'Python', icon: Python },
+    { name: 'GraphQL', icon: GraphQL },
+    { name: 'Swagger', icon: Swagger },
     { name: 'MongoDB', icon: MongoDB },
     { name: 'PostgreSQL', icon: PostgreSQL },
     { name: 'MySQL', icon: MySQL },
-    { name: 'SQL', icon: SQL },
-    { name: 'Swagger', icon: Swagger },
+    { name: 'SQL Server', icon: SQL },
     { name: 'Docker', icon: Docker }
   ],
   Others: [
     { name: 'AWS', icon: AWS },
     { name: 'GoogleCloud', icon: GoogleCloud },
+    { name: 'Azure', icon: Azure },
     { name: 'Git', icon: Git },
     { name: 'GitHub', icon: GitHub },
+    { name: 'Actions', icon: Actions },
     { name: 'Jenkins', icon: Jenkins },
-    { name: 'GraphQL', icon: GraphQL },
-    { name: 'VS Code', icon: Vsc },
+    { name: 'Vercel', icon: Vercel },
     { name: 'Postman', icon: Postman },
+    { name: 'Jest', icon: Jest },
+    { name: 'Stripe', icon: Stripe },
     { name: 'Cloudinary', icon: Cloudinary },
     { name: 'Cloudflare', icon: Cloudflare },
-    { name: 'Stripe', icon: Stripe },
-    { name: 'Vercel', icon: Vercel },
-    { name: 'Jest', icon: Jest },
-    { name: 'Azure', icon: Azure }
+    { name: 'VS Code', icon: Vsc }
   ]
 };
 

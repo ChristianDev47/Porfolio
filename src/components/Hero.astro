@@ -53,8 +53,15 @@ const CV = Astro.currentLocale === 'es' ? '/cv/CV_Christian_Delgado_FullStackDev
   .space-before::before {
     content: "\00A0"; 
   }
-  .titleFont {
-    font-family: 'Eurostile', sans-serif;
+  @font-face {
+    font-family: 'Eurostile';
+    src: url('/fonts/eurostile.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+  }
+  .title {
+    font-family: 'Eurostile', sans-serif !important;
   }
 </style>
 
