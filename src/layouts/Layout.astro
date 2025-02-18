@@ -30,7 +30,7 @@ const { description, title } = Astro.props
     <div id="flashlight" class="invisible dark:visible"></div>
     <div id="custom-cursor" class="dark:hidden pointer-events-none fixed inset-0 z-50 transition duration-300 lg:absolute w-[600px]"></div>
     <div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-[#000000] "></div>
-    <img alt="" fetchpriority="high" width="1760" height="980" decoding="async" data-nimg="1" class="pointer-events-none absolute left-1/2 top-0 min-w-[1760px] -translate-x-1/2 xl:min-w-[1588px] lg:top-[-22px] lg:min-w-[1420px] md:top-[46px] md:min-w-[1058px]" style="color:transparent" sizes="(max-width: 639px) 1058px"  src="/principal/bg.webp">
+    <img alt="" fetchpriority="high" width="1760" height="980" decoding="async" data-nimg="1" class="pointer-events-none absolute left-1/2 top-0 min-w-full -translate-x-1/2 xl:min-w-[1588px] lg:top-[-22px] lg:min-w-[1420px] md:top-[46px] md:min-w-[1058px] w-full h-auto" style="color:transparent" sizes="(max-width: 639px) 1058px"  src="/principal/bg.webp">
       <Header />
         <slot />
       <Footer />
