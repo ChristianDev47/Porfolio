@@ -44,10 +44,10 @@ const SoftSkills_data =
     <h1 class="title mt-[2.9rem] text-[32px] text-center text-[#ffffff]">{i18n.SKILLS.SKILLS_INFO.SOFT_SKILLS}</h1>
     <section class="ai-index safe-paddings relative flex justify-center items-center ">
       <div class="relative z-0 mx-auto w-[1460px] max-w-full ">
-        <div class="relative overflow-hidden flex justify-center mt-[2rem] md:px-[9rem] sm:px-[8rem] px-[6rem]">
+        <div class="relative overflow-hidden flex justify-center mt-[2rem] md:px-[9rem] sm:px-[8rem] px-[2rem]">
           <img class="relative w-[40rem] max-w-full h-auto" src="/principal/programmer.webp" alt="" aria-hidden="true"/>
         </div>
-        <div class="absolute left-0 right-0 top-0 mx-auto w-full max-h-full  aspect-[1.66667] [mask-image:radial-gradient(ellipse_55%_70%_at_50%_50%,#000_60%,transparent_100%)]">
+        <div class="absolute left-0 right-0 top-0 mx-auto w-full max-h-full  aspect-[1.66667] [mask-image:radial-gradient(ellipse_55%_70%_at_50%_50%,#000_60%,transparent_100%)] sm:visible invisible">
           <svg
             class="h-[568px] max-h-full w-full"
             viewBox="0 0 1280 768"
@@ -59,6 +59,12 @@ const SoftSkills_data =
             </g>
             ))}
           </svg>
+        </div>
+        <div class="w-full flex justify-center items-center flex-wrap gap-2 sm:hidden mt-[1rem] z-50">
+          {SoftSkills_data.map((Skill) => (
+            <span class="z-20 bg-gradient-to-b from-white via-white via-25% to-white/60 bg-clip-text text-[16px] leading-none tracking-tighter text-transparent xl:text-[14px] lg:text-xs group-hover:text-[#4ade80] py-1">{Skill.name}</span>
+         ))}
+
         </div>
       </div>
     </section>

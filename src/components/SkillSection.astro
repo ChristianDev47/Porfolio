@@ -17,7 +17,7 @@ const { title, skills, val } = Astro.props;
     <div class="grid md:grid-cols-5 sm:grid-cols-4 grid-cols-3 gap-x-2 gap-y-3">
       {
         skills.map((Skill) => (
-          <div class="group relative flex h-[30px] lg:ml-0 ml-5 shrink-0 items-center overflow-hidden rounded-md px-3 leading-none outline-none xl:py-[5px] after:opacity-0 space-x-1 text__glowing  cursor-pointer group text__show transition duration-200" >
+          <div class="group relative flex h-[30px] lg:ml-0 ml-3 shrink-0 items-center overflow-hidden rounded-md sm:px-3 px-1 leading-none outline-none xl:py-[5px] after:opacity-0 space-x-1 text__glowing  cursor-pointer group text__show transition duration-200" >
             <Skill.icon class="size-6 text-[#ced1d4] group-hover:text-[#4ade80]"/>
             <span class="z-20 bg-gradient-to-b from-white via-white via-25% to-white/60 bg-clip-text text-sm leading-none tracking-tighter text-transparent xl:text-[14px] lg:text-xs group-hover:text-[#4ade80] py-1">{Skill.name}</span>
           </div>
