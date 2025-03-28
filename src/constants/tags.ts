@@ -31,6 +31,8 @@ import Cloudflare from '../icons/Cloudflare.astro';
 import GoogleCloud from '@/icons/GoogleCloud.astro';
 import Stripe from '@/icons/Stripe.astro';
 import AWS from '@/icons/AWS.astro';
+import PHP from '@/icons/PHP.astro';
+import Laravel from '@/icons/Laravel.astro';
 
 export const TAGS = {
   AWS: {
@@ -164,6 +166,14 @@ export const TAGS = {
   STRIPE: {
     name: 'Stripe',
     icon: Stripe
-  }
+  },
+  PHP: {
+    name: 'PHP',
+    icon: PHP
+  },
+  LARAVEL: {
+    name: 'Laravel',
+    icon: Laravel
+  },
 };
 

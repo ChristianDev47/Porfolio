@@ -38,9 +38,9 @@ import Time from '@/icons/Time.astro';
 import Proactivity from '@/icons/Proactivity.astro';
 import GoogleCloud from '@/icons/GoogleCloud.astro';
 import Stripe from '@/icons/Stripe.astro';
-import Java from '@/icons/Java.astro';
-import SpringBoot from '@/icons/SpringBoot.astro';
 import Actions from '@/icons/Actions.astro';
+import PHP from '@/icons/PHP.astro';
+import Laravel from '@/icons/Laravel.astro';
 
 
 export const TechnicalSkills = {
@@ -57,8 +57,8 @@ export const TechnicalSkills = {
     { name: 'Figma', icon: Figma }
   ],
   Backend: [
-    { name: 'Java', icon: Java },
-    { name: 'Spring Boot', icon: SpringBoot },
+    { name: 'PHP', icon: PHP },
+    { name: 'Laravel', icon: Laravel },
     { name: 'Node.js', icon: NodeJS },
     { name: 'Express', icon: Express },
     { name: 'Django', icon: Django },
